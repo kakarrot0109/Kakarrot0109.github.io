@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kakarrot">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="自救者、人恒久之。">
+
+
+    <meta name="keywords" content="产品经理,哲学,历史,魔兽世界">
+
+
+<title>Pymongo 基础总结 | Kakarrot&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kakarrot&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kakarrot&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Pymongo 基础总结</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kakarrot</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">九月 3, 2018&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Python/">Python</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="MongoDB-安装配置"><a href="#MongoDB-安装配置" class="headerlink" title="MongoDB 安装配置"></a>MongoDB 安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>MongoDB 安装在 C 盘根目录</li>
+<li>添加环境变量<code>C:\MongoDB\bin</code></li>
+<li>在 c:\mongodb\data 路径下创建一个 db 文件夹</li>
+</ol>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">|-- MongoDB</span><br><span class="line">|-- LICENSE-Community.txt</span><br><span class="line">|-- MPL-2</span><br><span class="line">|-- README</span><br><span class="line">|-- THIRD-PARTY-NOTICES</span><br><span class="line">|-- THIRD-PARTY-NOTICES.gotools</span><br><span class="line">|-- bin</span><br><span class="line">| |-- bsondump.exe</span><br><span class="line">| |-- InstallCompass.ps1</span><br><span class="line">| |-- libeay32.dll</span><br><span class="line">| |-- mongo.exe</span><br><span class="line">| |-- mongod.cfg</span><br><span class="line">| |-- mongod.exe</span><br><span class="line">| |-- mongod.pdb</span><br><span class="line">| |-- mongodump.exe</span><br><span class="line">| |-- mongoexport.exe</span><br><span class="line">| |-- mongofiles.exe</span><br><span class="line">| |-- mongoimport.exe</span><br><span class="line">| |-- mongorestore.exe</span><br><span class="line">| |-- mongos.exe</span><br><span class="line">| |-- mongos.pdb</span><br><span class="line">| |-- mongostat.exe</span><br><span class="line">| |-- mongotop.exe</span><br><span class="line">| |-- ssleay32.dll</span><br><span class="line">|-- data</span><br><span class="line">| |-- db</span><br><span class="line">|-- log</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>运行 MongoDB</p>
+<p><code>&gt; mongod --dbpath &quot;c:\mongodb\data\db&quot;</code></p>
+</li>
+<li><p>MongoDB 已经开启，访问<code>http://localhost:27017/</code>查看</p>
+</li>
+<li><p>将数据压缩包解压至文件夹</p>
+</li>
+<li><p>导入数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; mongorestore -d api_xr <span class="string">"C:\Users\KAKARROT\Desktop\mongodb_2018111611\mongo_backup\api_xr"</span></span><br><span class="line">&gt; mongorestore -d render <span class="string">"C:\Users\KAKARROT\Desktop\mongodb_2018111611\mongo_backup\render"</span></span><br><span class="line">&gt; mongorestore -d voucher <span class="string">"C:\Users\KAKARROT\Desktop\mongodb_2018111611\mongo_backup\voucher"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="查看服务器状态"><a href="#查看服务器状态" class="headerlink" title="查看服务器状态"></a>查看服务器状态</h3><p><code>&gt; db.serverStatus()</code></p>
+<h3 id="创建-使用数据库"><a href="#创建-使用数据库" class="headerlink" title="创建/使用数据库"></a>创建/使用数据库</h3><p><code>&gt; use test</code></p>
+<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p><code>&gt; show dbs</code></p>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; use <span class="built_in">test</span></span><br><span class="line">&gt; db.dropDatabase()</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; use <span class="built_in">test</span></span><br><span class="line">&gt; db.createCollection(<span class="string">"runoob"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看集合"><a href="#查看集合" class="headerlink" title="查看集合"></a>查看集合</h3><p><code>&gt; show collections</code></p>
+<h3 id="删除集合"><a href="#删除集合" class="headerlink" title="删除集合"></a>删除集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; use <span class="built_in">test</span></span><br><span class="line">&gt; db.runoob.drop()</span><br></pre></td></tr></table></figure>
+
+<h2 id="MongoDB-Pymongo-常用操作"><a href="#MongoDB-Pymongo-常用操作" class="headerlink" title="MongoDB Pymongo 常用操作"></a>MongoDB Pymongo 常用操作</h2><h3 id="插入文档"><a href="#插入文档" class="headerlink" title="插入文档"></a>插入文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.insertOne()</span><br><span class="line">&gt; db.col.insertMany()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.insert_one()</span><br><span class="line">db.col.insert_many()</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询文档"><a href="#查询文档" class="headerlink" title="查询文档"></a>查询文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.find(&#123;&#125;)</span><br><span class="line">&gt; db.col.find(&#123;&#125;).count()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find()</span><br><span class="line">db.col.find_one()</span><br><span class="line">db.count_documents()</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新文档"><a href="#更新文档" class="headerlink" title="更新文档"></a>更新文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.updateOne()</span><br><span class="line">&gt; db.col.updateMany()</span><br><span class="line">&gt; db.col.replaceOne()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.update_one()</span><br><span class="line">db.col.update_many()</span><br><span class="line">db.col.replace_one()</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.deleteOne()</span><br><span class="line">&gt; db.col.deleteMany()</span><br><span class="line">&gt; db.col.remove()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.delete_one()</span><br><span class="line">db.col.delete_many()</span><br></pre></td></tr></table></figure>
+
+<h3 id="读取指定数量文档"><a href="#读取指定数量文档" class="headerlink" title="读取指定数量文档"></a>读取指定数量文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.find().<span class="built_in">limit</span>(num)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find().limit(num)</span><br></pre></td></tr></table></figure>
+
+<h3 id="读取指定数量文档并跳过指定数量的文档"><a href="#读取指定数量文档并跳过指定数量的文档" class="headerlink" title="读取指定数量文档并跳过指定数量的文档"></a>读取指定数量文档并跳过指定数量的文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.find().<span class="built_in">limit</span>(num).skip(num)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find().limit(num).skip(num)</span><br></pre></td></tr></table></figure>
+
+<h3 id="排序文档"><a href="#排序文档" class="headerlink" title="排序文档"></a>排序文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.find().sort(&#123;key:1&#125;)</span><br><span class="line">&gt; db.col.find().sort(&#123;key:-1&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find().sort(&#123;key:<span class="number">1</span>&#125;)</span><br><span class="line">db.col.find().sort(&#123;key:<span class="number">-1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>skip()</code>、<code>limilt()</code>、<code>sort()</code>三个放在一起执行的时候，执行的顺序是先<code>sort()</code>, 然后是<code>skip()</code>，最后是显示的<code>limit()</code>。</p>
+</blockquote>
+<h3 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h3><ul>
+<li>‘&gt;’ — <code>$gt</code></li>
+<li>‘&lt;’ — <code>$lt</code></li>
+<li>‘&gt;=’ — <code>$gte</code></li>
+<li>‘&lt;=’ — <code>$lte</code></li>
+<li>‘!=’ — <code>$ne</code></li>
+</ul>
+<h3 id="And-amp-Or"><a href="#And-amp-Or" class="headerlink" title="And&amp;Or"></a>And&amp;Or</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.find(&#123;key1:value1, key2:value2&#125;)</span><br><span class="line">&gt; db.col.find(&#123;<span class="variable">$or</span>: [&#123;key1: value1&#125;, &#123;key2:value2&#125;]&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find(&#123;</span><br><span class="line">    key1: value1,</span><br><span class="line">    key2: value2,</span><br><span class="line">    <span class="string">'$or'</span>:[</span><br><span class="line">        &#123;key3: value3&#125;,</span><br><span class="line">        &#123;key4: value4&#125;,</span><br><span class="line">        &#123;key5: &#123;<span class="string">'$ne'</span>: value5&#125;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kakarrot</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://kakarrot.com/posts/af012d07/">http://kakarrot.com/posts/af012d07/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/MongoDB/"># MongoDB</a>
+                    
+                        <a href="/tags/Python/"># Python</a>
+                    
+                        <a href="/tags/Pymongo/"># Pymongo</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/posts/cef7cd20/">MaxScript .NET ListViewWrapper原版注释翻译</a>
+            
+            
+            <a class="next" rel="next" href="/posts/7e397dc3/">Hexo+NexT主题设置</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kakarrot | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

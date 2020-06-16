@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kakarrot">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="自救者、人恒久之。">
+
+
+    <meta name="keywords" content="产品经理,哲学,历史,魔兽世界">
+
+
+<title>Kindle 修改字体 | Kakarrot&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kakarrot&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kakarrot&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Kindle 修改字体</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kakarrot</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">七月 23, 2019&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>Kindle设备自5.9.6版本固件开始支持自定义字体，实现方法也很简单，只需要把自己喜欢的字体的文件拷贝到Kindle中，即可在阅读电子书时轻松选用。从此再也不需要通过越狱实现更换字体了。</p>
+<p>Kindle 自定义字体仅支持 OpenType（OTF）和 TrueType（TTF）这两种字体格式，其它字体格式均不支持。此外，字体通常以字体集的形式可用，且每种字体可能包含数个不同的文件，分别为不同的字体样式。例如，常规、斜体、粗体，粗斜体等每种样式各为一个文件。我们建议您安装字体集所含的全部文件以获得最佳阅读体验。受支持的字体文件的扩展名应该是 .ttf、.otf 或 .ttc。</p>
+<h2 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h2><p>Kindle for PC版本没有修改字体选项，但是对于个性化(折腾)较强的用户来说，就非常不爽。</p>
+<p>网上搜集了一个修改软件，将exe执行文件，解压到Kindle安装目录，关闭Kindle软件，执行程序即可修改。</p>
+<p>默认的Kindle安装目录<code>C:\Program Files (x86)\Amazon\Kindle</code></p>
+<blockquote>
+<p>过滤中文名字体需要取消勾选！！！</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/07/23/5d3681dce8e1365827.png" alt="修改字体"></p>
+<p>百度网盘连接：<a href="https://pan.baidu.com/s/1l9sKRPCt5Z4N64fnXrpfEA" target="_blank" rel="noopener">点击下载</a></p>
+<p>百度网盘密码：rap1 </p>
+<h2 id="Kindle"><a href="#Kindle" class="headerlink" title="Kindle"></a>Kindle</h2><ol>
+<li>确保 Kindle 设备的固件版本大于等于 5.9.6（升级最新固件）；</li>
+<li>用 USB 数据线把 Kindle 连接到电脑直至出现 Kindle 磁盘；</li>
+<li>把字体文件复制到 Kindle 根目录下的“fonts”文件夹中；</li>
+<li>把 Kindle 磁盘从电脑上弹出（或安全移除）；</li>
+<li>打开电子书，点击屏幕上方调出操控条，点击【Aa】按钮选择自定义字体。</li>
+</ol>
+<h2 id="电子书格式"><a href="#电子书格式" class="headerlink" title="电子书格式"></a>电子书格式</h2><ol>
+<li>登录网站<a href="https://convertio.co/zh/" target="_blank" rel="noopener">convertio.co</a>；</li>
+<li>将mobi格式转换为azw3格式；</li>
+<li>将azw3格式电子书放到Kindle/document/文件夹内；</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kakarrot</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://kakarrot.com/posts/f6e8f401/">http://kakarrot.com/posts/f6e8f401/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Kindle/"># Kindle</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/posts/7bd76500/">Hexo插件集合</a>
+            
+            
+            <a class="next" rel="next" href="/posts/25d8939/">互联网水军自爆</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kakarrot | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

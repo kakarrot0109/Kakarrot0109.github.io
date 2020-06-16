@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kakarrot">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="自救者、人恒久之。">
+
+
+    <meta name="keywords" content="产品经理,哲学,历史,魔兽世界">
+
+
+<title>IKBC Poker 2 使用指南 | Kakarrot&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kakarrot&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kakarrot&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">IKBC Poker 2 使用指南</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kakarrot</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">四月 22, 2020&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="常见FAQ"><a href="#常见FAQ" class="headerlink" title="常见FAQ"></a>常见FAQ</h2><p>Q: 左 WIN 键亮灯怎么关 ？</p>
+<blockquote>
+<p>A: <code>FN + Z</code></p>
+</blockquote>
+<p>Q: 空格左灯怎么关 ？</p>
+<blockquote>
+<p>A: <code>FN + 右 Shift</code></p>
+</blockquote>
+<p>Q: 空格右灯怎么关 ？</p>
+<blockquote>
+<p>A: <code>FN + 右 Ctrl</code></p>
+</blockquote>
+<p>Q: 怎么打出 <code>~</code> ？</p>
+<blockquote>
+<p>A: <code>Shift + FN + ESC (注意顺序)</code></p>
+</blockquote>
+<p>Q: 只能打出大写字母／大写锁定了</p>
+<blockquote>
+<p>A: 再按一次 <code>Shift</code>，如果左 WIN 键亮灯，可以参照第一条关掉</p>
+</blockquote>
+<p>Q: 关掉键盘的 LED 灯 ？（仅限于带背光版本）</p>
+<blockquote>
+<p>A: <code>FN + v</code></p>
+</blockquote>
+<p>Q: w、a、s、d 打不出来，变成方向键了</p>
+<blockquote>
+<p>A: <code>FN + 空格键</code></p>
+</blockquote>
+<p>Q: PN 键被锁定了，锁定编程层才能正常使用（FN + 右 Shift）才能正常用键码</p>
+<blockquote>
+<p>A：键盘断电试试（亲测可行，可能是 bug）</p>
+</blockquote>
+<h2 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h2><table>
+<thead>
+<tr>
+<th align="center">FN 常用功能键</th>
+<th align="center">功能键</th>
+<th align="center">组合键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FN</td>
+<td align="center">ESC</td>
+<td align="center">`~</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">[1、2、3…… -&gt; +]</td>
+<td align="center">[F1 -&gt; F12]</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">BACKSPACE</td>
+<td align="center">DEL</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">I</td>
+<td align="center">INS</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">P</td>
+<td align="center">PRINT SCREEN</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">[ {</td>
+<td align="center">SCROLL LOCK</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">] }</td>
+<td align="center">PAUSE</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">ENTER</td>
+<td align="center">副 ENTER</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">; :</td>
+<td align="center">HOME</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">‘ “”</td>
+<td align="center">PAGE UP</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">X</td>
+<td align="center">APP</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">. &gt;</td>
+<td align="center">END</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">/ ? &gt;</td>
+<td align="center">PAGE DOWN</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">W</td>
+<td align="center">↑</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">A</td>
+<td align="center">←</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">S</td>
+<td align="center">↓</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">D</td>
+<td align="center">→</td>
+</tr>
+</tbody></table>
+<h2 id="多媒体功能"><a href="#多媒体功能" class="headerlink" title="多媒体功能"></a>多媒体功能</h2><table>
+<thead>
+<tr>
+<th align="center">FN 多媒体功能键</th>
+<th align="center">功能键</th>
+<th align="center">组合键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FN</td>
+<td align="center">Y</td>
+<td align="center">计算器</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">N</td>
+<td align="center">音量减</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">M</td>
+<td align="center">音量增</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">, &lt;</td>
+<td align="center">静音</td>
+</tr>
+</tbody></table>
+<h2 id="LED-功能（适用于背光版本）"><a href="#LED-功能（适用于背光版本）" class="headerlink" title="LED 功能（适用于背光版本）"></a>LED 功能（适用于背光版本）</h2><table>
+<thead>
+<tr>
+<th align="center">LED</th>
+<th align="center">功能键</th>
+<th align="center">功能</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FN</td>
+<td align="center">V</td>
+<td align="center">全键 LED 亮（除左 WIN）</td>
+<td align="center">按压第一次</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">V</td>
+<td align="center">关闭 LED</td>
+<td align="center">按压第二次</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">C</td>
+<td align="center">降低 LED 亮度</td>
+<td align="center">共 7 级亮度</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">B</td>
+<td align="center">增加 LED 亮度</td>
+<td align="center">共 7 级亮度</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">E</td>
+<td align="center">保存背光亮度</td>
+<td align="center">无</td>
+</tr>
+</tbody></table>
+<h2 id="编程相关"><a href="#编程相关" class="headerlink" title="编程相关"></a>编程相关</h2><table>
+<thead>
+<tr>
+<th align="center">编程相关</th>
+<th align="center">功能键</th>
+<th align="center">组合键</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FN</td>
+<td align="center">R</td>
+<td align="center">复位键（<strong>慎重</strong>）</td>
+<td align="center">必须长按 12 秒</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">右 Shift</td>
+<td align="center">切换至编程层</td>
+<td align="center">按压第一次（空格左灯亮）</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">右 Shift</td>
+<td align="center">切换回编程层</td>
+<td align="center">按压第二次（空格左灯灭）</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">右 Ctrl</td>
+<td align="center">进入编程模式</td>
+<td align="center">按压第一次（PN 灯亮）</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">右 Ctrl</td>
+<td align="center">退出编程模式</td>
+<td align="center">按压第二次（PN 灯灭）</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">F</td>
+<td align="center">延时 15 ms</td>
+<td align="center">仅在编程模式下有效</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">G</td>
+<td align="center">延时 0.1 s</td>
+<td align="center">仅在编程模式下有效</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">H</td>
+<td align="center">延时 0.5 s</td>
+<td align="center">仅在编程模式下有效</td>
+</tr>
+</tbody></table>
+<h2 id="编程举例"><a href="#编程举例" class="headerlink" title="编程举例"></a>编程举例</h2><p>目标：把 <code>a</code> 编为 <code>Ctrl + FN + a</code> （mac 下切换屏幕）</p>
+<ol>
+<li><code>FN + 右 Ctrl</code> 打开编程模式，空格右键亮起</li>
+<li>点下 <code>a</code> 键， 接着按下 <code>Ctrl + FN + a</code> 组合键，放开，再点击 <code>PN</code> 键保存编辑</li>
+<li><code>FN + 右 Ctrl</code> 退出编程模式，空格右灯熄灭</li>
+<li><code>PN + a</code> =&gt; 屏幕切换，成功</li>
+<li>现在我们锁定编程模式 <code>FN + 右 Shift</code>，按 <code>a</code> =&gt; 屏幕切换</li>
+</ol>
+<h2 id="特殊功能"><a href="#特殊功能" class="headerlink" title="特殊功能"></a>特殊功能</h2><table>
+<thead>
+<tr>
+<th align="center">FN 特殊功能</th>
+<th align="center">功能键</th>
+<th align="center">组合键</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FN</td>
+<td align="center">Z</td>
+<td align="center">把 Shift 键变成按下一直发码，再按一下停止发码</td>
+<td align="center">按压第一次（左 WIN 灯亮）</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">Z</td>
+<td align="center">Shift 键恢复正常</td>
+<td align="center">按压第二次（左 WIN 灯灭）</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">SPACE</td>
+<td align="center">W，A，S，D 转换为 ↑←↓→</td>
+<td align="center">按压第一次</td>
+</tr>
+<tr>
+<td align="center">FN</td>
+<td align="center">SPACE</td>
+<td align="center">↑←↓→ 转换为 W，A，S，D</td>
+<td align="center">按压第二次</td>
+</tr>
+</tbody></table>
+<h2 id="指拨开关说明"><a href="#指拨开关说明" class="headerlink" title="指拨开关说明"></a>指拨开关说明</h2><table>
+<thead>
+<tr>
+<th align="center">指拨开关说明</th>
+<th align="center">ON</th>
+<th align="center">OFF</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">开关 1</td>
+<td align="center">CAP = 左 WIN / 左 FN CAP 灯 = 左 WIN 灯</td>
+<td align="center">CAP = CAP CAP 灯 = CAP 灯</td>
+<td align="center">预设 = OFF</td>
+</tr>
+<tr>
+<td align="center">开关 1</td>
+<td align="center">左 WIN / 左 FN = CAP 左 WIN 灯 = CAP 灯</td>
+<td align="center">左 WIN / 左 FN = 左 WIN / 左 FN 左 WIN 灯 = 左 WIN 灯</td>
+<td align="center">预设 = OFF</td>
+</tr>
+<tr>
+<td align="center">开关 2</td>
+<td align="center">右 Ctrl = `~</td>
+<td align="center">右 Ctrl = 右 Ctrl</td>
+<td align="center">预设 = OFF</td>
+</tr>
+<tr>
+<td align="center">开关 3</td>
+<td align="center">左 WIN = 左 FN</td>
+<td align="center">左 WIN = 左 WIN</td>
+<td align="center">预设 = OFF</td>
+</tr>
+<tr>
+<td align="center">开关 4</td>
+<td align="center">写保护键盘，按 FN + R 或当尝试编程按键都会导致 PN 灯快速闪烁一秒 然后熄灭并返回非编程模式的正常状态</td>
+<td align="center"></td>
+<td align="center">预设 = OFF</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kakarrot</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://kakarrot.com/posts/18f235bc/">http://kakarrot.com/posts/18f235bc/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/IKBC/"># IKBC</a>
+                    
+                        <a href="/tags/Poker/"># Poker</a>
+                    
+                        <a href="/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"># 机械键盘</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/posts/9dc117ce/">俞军产品方法论</a>
+            
+            
+            <a class="next" rel="next" href="/posts/8e941c8b/">Hexo+Ocean主题设置</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kakarrot | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
