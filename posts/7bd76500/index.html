@@ -103,9 +103,7 @@
 </script>
         <div class="main">
             <div class="container">
-    
-    
-        <div class="post-toc">
+    <div class="post-toc">
     <div class="tocbot-list">
     </div>
     <div class="tocbot-list-menu">
@@ -165,38 +163,34 @@
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-</script>
-    
+</script>  
+  <article class="post-wrap">
+    <header class="post-header">
+      <h1 class="post-title">Hexo插件集合</h1>
+      
+      <div class="post-meta">
+         作者:&nbsp;
+        <a itemprop="author" rel="author" href="/">Kakarrot</a>
+         
+        <span class="post-time">
+          &nbsp;&nbsp;&nbsp;日期:&nbsp;
+          <a href="#"
+            >八月 6, 2019&nbsp;&nbsp;0:00:00</a
+          >
+        </span>
+         
+        <span class="post-category">
+          &nbsp;&nbsp;&nbsp;分类: &nbsp;
+          <a href="/categories/Hexo/">Hexo</a>
+          
+        </span>
+        
+      </div>
+      
+    </header>
 
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">Hexo插件集合</h1>
-            
-                <div class="post-meta">
-                    
-                        作者: <a itemprop="author" rel="author" href="/">Kakarrot</a>
-                    
-
-                    
-                        <span class="post-time">
-                        日期: <a href="#">八月 6, 2019&nbsp;&nbsp;0:00:00</a>
-                        </span>
-                    
-                    
-                        <span class="post-category">
-                    分类:
-                            
-                                <a href="/categories/Hexo/">Hexo</a>
-                            
-                        </span>
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <h2 id="abbrlink"><a href="#abbrlink" class="headerlink" title="abbrlink"></a>abbrlink</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>$ npm install hexo-abbrlink --save</code></p>
+    <div class="post-content">
+      <h2 id="abbrlink"><a href="#abbrlink" class="headerlink" title="abbrlink"></a>abbrlink</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>$ npm install hexo-abbrlink --save</code></p>
 <h3 id="站点配置文件"><a href="#站点配置文件" class="headerlink" title="站点配置文件"></a>站点配置文件</h3><figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># abbrlink config</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span> <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span> <span class="comment">#support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="douban"><a href="#douban" class="headerlink" title="douban"></a>douban</h2><h3 id="安装插件-1"><a href="#安装插件-1" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>$ npm install hexo-douban --save</code></p>
@@ -218,35 +212,40 @@
 
 <h3 id="修改边栏搜索框样式"><a href="#修改边栏搜索框样式" class="headerlink" title="修改边栏搜索框样式"></a>修改边栏搜索框样式</h3><figure class="highlight css"><figcaption><span>themes\next\source\css_custom\custom.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu</span> <span class="selector-class">.menu-item-search</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.menu</span> <span class="selector-class">.menu-item-search</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
+    </div>
 
-        <section class="post-tags">
-            <div>
-                <span>标签:</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Hexo/"> Hexo</a>
-                    
-                        <a href="/tags/NexT/"> NexT</a>
-                    
-                        <a href="/tags/%E6%8F%92%E4%BB%B6/"> 插件</a>
-                    
-                        
-                </span>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/posts/a294b2de/">人的记忆是会改变的</a>
-            
-            
-            <a class="next" rel="next" href="/posts/f6e8f401/">Kindle 修改字体</a>
-            
-        </section>
-
-
-    </article>
+    <section class="post-tags">
+      <div>
+        <span>标签:</span>
+        <span class="tag">
+           
+          <a href="/tags/Hexo/"
+            >&nbsp; # &nbsp;Hexo</a
+          >
+          
+          <a href="/tags/NexT/"
+            >&nbsp; # &nbsp;NexT</a
+          >
+          
+          <a href="/tags/%E6%8F%92%E4%BB%B6/"
+            >&nbsp; # &nbsp;插件</a
+          >
+           
+        </span>
+      </div>
+    </section>
+    <section class="post-nav">
+      
+      <a class="prev" rel="prev" href="/posts/a294b2de/"
+        >人的记忆是会改变的</a
+      >
+       
+      <a class="next" rel="next" href="/posts/f6e8f401/"
+        >Kindle 修改字体</a
+      >
+      
+    </section>
+  </article>
 </div>
 
         </div>

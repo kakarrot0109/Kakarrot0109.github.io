@@ -103,9 +103,7 @@
 </script>
         <div class="main">
             <div class="container">
-    
-    
-        <div class="post-toc">
+    <div class="post-toc">
     <div class="tocbot-list">
     </div>
     <div class="tocbot-list-menu">
@@ -165,38 +163,34 @@
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-</script>
-    
+</script>  
+  <article class="post-wrap">
+    <header class="post-header">
+      <h1 class="post-title">Pymongo 基础总结</h1>
+      
+      <div class="post-meta">
+         作者:&nbsp;
+        <a itemprop="author" rel="author" href="/">Kakarrot</a>
+         
+        <span class="post-time">
+          &nbsp;&nbsp;&nbsp;日期:&nbsp;
+          <a href="#"
+            >九月 3, 2018&nbsp;&nbsp;0:00:00</a
+          >
+        </span>
+         
+        <span class="post-category">
+          &nbsp;&nbsp;&nbsp;分类: &nbsp;
+          <a href="/categories/Python/">Python</a>
+          
+        </span>
+        
+      </div>
+      
+    </header>
 
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">Pymongo 基础总结</h1>
-            
-                <div class="post-meta">
-                    
-                        作者: <a itemprop="author" rel="author" href="/">Kakarrot</a>
-                    
-
-                    
-                        <span class="post-time">
-                        日期: <a href="#">九月 3, 2018&nbsp;&nbsp;0:00:00</a>
-                        </span>
-                    
-                    
-                        <span class="post-category">
-                    分类:
-                            
-                                <a href="/categories/Python/">Python</a>
-                            
-                        </span>
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <h2 id="MongoDB-安装配置"><a href="#MongoDB-安装配置" class="headerlink" title="MongoDB 安装配置"></a>MongoDB 安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+    <div class="post-content">
+      <h2 id="MongoDB-安装配置"><a href="#MongoDB-安装配置" class="headerlink" title="MongoDB 安装配置"></a>MongoDB 安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
 <li>MongoDB 安装在 C 盘根目录</li>
 <li>添加环境变量<code>C:\MongoDB\bin</code></li>
 <li>在 c:\mongodb\data 路径下创建一个 db 文件夹</li>
@@ -268,35 +262,40 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find(&#123;</span><br><span class="line">    key1: value1,</span><br><span class="line">    key2: value2,</span><br><span class="line">    <span class="string">'$or'</span>:[</span><br><span class="line">        &#123;key3: value3&#125;,</span><br><span class="line">        &#123;key4: value4&#125;,</span><br><span class="line">        &#123;key5: &#123;<span class="string">'$ne'</span>: value5&#125;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-        </div>
+    </div>
 
-        <section class="post-tags">
-            <div>
-                <span>标签:</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Python/"> Python</a>
-                    
-                        <a href="/tags/MongoDB/"> MongoDB</a>
-                    
-                        <a href="/tags/Pymongo/"> Pymongo</a>
-                    
-                        
-                </span>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/posts/cef7cd20/">MaxScript .NET ListViewWrapper原版注释翻译</a>
-            
-            
-            <a class="next" rel="next" href="/posts/383a0bb0/">Hexo+Github轻量级博客搭建</a>
-            
-        </section>
-
-
-    </article>
+    <section class="post-tags">
+      <div>
+        <span>标签:</span>
+        <span class="tag">
+           
+          <a href="/tags/MongoDB/"
+            >&nbsp; # &nbsp;MongoDB</a
+          >
+          
+          <a href="/tags/Python/"
+            >&nbsp; # &nbsp;Python</a
+          >
+          
+          <a href="/tags/Pymongo/"
+            >&nbsp; # &nbsp;Pymongo</a
+          >
+           
+        </span>
+      </div>
+    </section>
+    <section class="post-nav">
+      
+      <a class="prev" rel="prev" href="/posts/cef7cd20/"
+        >MaxScript .NET ListViewWrapper原版注释翻译</a
+      >
+       
+      <a class="next" rel="next" href="/posts/383a0bb0/"
+        >Hexo+Github轻量级博客搭建</a
+      >
+      
+    </section>
+  </article>
 </div>
 
         </div>
