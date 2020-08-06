@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kakarrot">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="我只想事情是它本来该有的那个样子！">
+
+
+    <meta name="keywords" content="产品,哲学,历史,魔兽,音乐">
+
+
+<title>Typora+PicGo写作 | Kakarrot&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kakarrot&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kakarrot&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">展开全部</a>
+        <a onclick="go_top()">返回顶部</a>
+        <a onclick="go_bottom()">滚动底部</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "收起全部"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "展开全部"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>  
+  <article class="post-wrap">
+    <header class="post-header">
+      <h1 class="post-title">Typora+PicGo写作</h1>
+      
+      <div class="post-meta">
+         作者:&nbsp;
+        <a itemprop="author" rel="author" href="/">Kakarrot</a>
+         
+        <span class="post-time">
+          &nbsp;&nbsp;&nbsp;日期:&nbsp;
+          <a href="#"
+            >八月 6, 2020&nbsp;&nbsp;0:00:00</a
+          >
+        </span>
+         
+        <span class="post-category">
+          &nbsp;&nbsp;&nbsp;分类: &nbsp;
+          <a href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a>
+          
+        </span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-content">
+      <h2 id="下载-PicGo"><a href="#下载-PicGo" class="headerlink" title="下载 PicGo"></a>下载 PicGo</h2><p><a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo 下载地址</a></p>
+<h2 id="Typora-配置"><a href="#Typora-配置" class="headerlink" title="Typora 配置"></a>Typora 配置</h2><p>进入 Typora 的偏好设置-图像进行如下设置：</p>
+<ol>
+<li>插入图片时，选择”上传图片”</li>
+<li>对本地、网络位置图片应用上述规则 勾选 2 个</li>
+<li>上传服务设定，选择 PicGO(app)并选择路径</li>
+</ol>
+<h2 id="SM-MS-获取-Token"><a href="#SM-MS-获取-Token" class="headerlink" title="SM.MS 获取 Token"></a>SM.MS 获取 Token</h2><p>登录<a href="sm.ms">sm.ms</a>个人控制面板，在 API Token 生成”Secret Token”</p>
+<h2 id="PicGO-安装插件"><a href="#PicGO-安装插件" class="headerlink" title="PicGO 安装插件"></a>PicGO 安装插件</h2><blockquote>
+<p>安装插件之前，确保已经按照 Node.js</p>
+</blockquote>
+<ol>
+<li>运行 PicGo-插件设置中搜索”smms-user”插件进行安装</li>
+<li>运行 PicGo-图床设置中 SM.MS 登录用户中，<code>Auth</code>输入 Token 码</li>
+</ol>
+<h2 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h2><ol>
+<li>重启 PicGo 软件</li>
+<li>在 PicGo 中上传图片进行测试</li>
+<li>在 Typora 中右键选择图片上传进行测试</li>
+</ol>
+<blockquote>
+<p>SM.MS 有时会抽风，但是目前来说应该是免费中较好用的图床应用了。</p>
+</blockquote>
+
+    </div>
+
+    <section class="post-tags">
+      <div>
+        <span>标签:</span>
+        <span class="tag">
+           
+          <a href="/tags/Markdown/"
+            >&nbsp; # &nbsp;Markdown</a
+          >
+          
+          <a href="/tags/Tppora/"
+            >&nbsp; # &nbsp;Tppora</a
+          >
+          
+          <a href="/tags/PicGO/"
+            >&nbsp; # &nbsp;PicGO</a
+          >
+          
+          <a href="/tags/sm-ms/"
+            >&nbsp; # &nbsp;sm.ms</a
+          >
+           
+        </span>
+      </div>
+    </section>
+    <section class="post-nav">
+       
+      <a class="next" rel="next" href="/posts/680e1baf/"
+        >Hexo自定义代码块样式</a
+      >
+      
+    </section>
+  </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kakarrot | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
