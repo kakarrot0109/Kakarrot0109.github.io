@@ -175,8 +175,9 @@
         <span class="post-time">
           &nbsp;&nbsp;&nbsp;日期:&nbsp;
           <a href="#"
-            >八月 06, 2019&nbsp;&nbsp;0:00:00</a
-          >
+            >八月 06, 2019
+            <!-- &nbsp;&nbsp;0:00:00 -->
+          </a>
         </span>
          
         <span class="post-category">
@@ -189,8 +190,7 @@
       
     </header>
 
-    <div class="post-content">
-      <h2 id="abbrlink"><a href="#abbrlink" class="headerlink" title="abbrlink"></a>abbrlink</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>$ npm install hexo-abbrlink --save</code></p>
+    <div class="post-content"><h2 id="abbrlink"><a href="#abbrlink" class="headerlink" title="abbrlink"></a>abbrlink</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>$ npm install hexo-abbrlink --save</code></p>
 <h3 id="站点配置文件"><a href="#站点配置文件" class="headerlink" title="站点配置文件"></a>站点配置文件</h3><figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># abbrlink config</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span> <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span> <span class="comment">#support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="douban"><a href="#douban" class="headerlink" title="douban"></a>douban</h2><h3 id="安装插件-1"><a href="#安装插件-1" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>$ npm install hexo-douban --save</code></p>
@@ -211,8 +211,7 @@
 <h3 id="修改边栏搜索框文字"><a href="#修改边栏搜索框文字" class="headerlink" title="修改边栏搜索框文字"></a>修改边栏搜索框文字</h3><figure class="highlight html"><figcaption><span>themes\next\layout_partials\header.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if hasSearch %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"menu-item menu-item-search"</span>&gt;</span></span><br><span class="line">    &#123;% if theme.swiftype_key %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">class</span>=<span class="string">"st-search-show-outputs"</span>&gt;</span></span><br><span class="line">    &#123;% elseif theme.local_search.enable || theme.algolia_search.enable %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">class</span>=<span class="string">"popup-trigger"</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">      &#123;% if theme.menu_icons.enable %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"menu-item-icon fa fa-search fa-fw"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">      <span class="comment">&lt;!--&#123;&#123; __('menu.search') &#125;&#125;--&gt;</span>搜索</span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改边栏搜索框样式"><a href="#修改边栏搜索框样式" class="headerlink" title="修改边栏搜索框样式"></a>修改边栏搜索框样式</h3><figure class="highlight css"><figcaption><span>themes\next\source\css_custom\custom.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu</span> <span class="selector-class">.menu-item-search</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.menu</span> <span class="selector-class">.menu-item-search</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    </div>
+</div>
 
     <section class="post-tags">
       <div>

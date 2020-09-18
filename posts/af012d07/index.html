@@ -175,8 +175,9 @@
         <span class="post-time">
           &nbsp;&nbsp;&nbsp;日期:&nbsp;
           <a href="#"
-            >九月 03, 2018&nbsp;&nbsp;0:00:00</a
-          >
+            >九月 03, 2018
+            <!-- &nbsp;&nbsp;0:00:00 -->
+          </a>
         </span>
          
         <span class="post-category">
@@ -189,8 +190,7 @@
       
     </header>
 
-    <div class="post-content">
-      <h2 id="MongoDB-安装配置"><a href="#MongoDB-安装配置" class="headerlink" title="MongoDB 安装配置"></a>MongoDB 安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+    <div class="post-content"><h2 id="MongoDB-安装配置"><a href="#MongoDB-安装配置" class="headerlink" title="MongoDB 安装配置"></a>MongoDB 安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
 <li>MongoDB 安装在 C 盘根目录</li>
 <li>添加环境变量<code>C:\MongoDB\bin</code></li>
 <li>在 c:\mongodb\data 路径下创建一个 db 文件夹</li>
@@ -261,8 +261,7 @@
 <h3 id="And-amp-Or"><a href="#And-amp-Or" class="headerlink" title="And&amp;Or"></a>And&amp;Or</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mongo Shell</span></span><br><span class="line">&gt; db.col.find(&#123;key1:value1, key2:value2&#125;)</span><br><span class="line">&gt; db.col.find(&#123;<span class="variable">$or</span>: [&#123;key1: value1&#125;, &#123;key2:value2&#125;]&#125;)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pymongo</span></span><br><span class="line">db.col.find(&#123;</span><br><span class="line">    key1: value1,</span><br><span class="line">    key2: value2,</span><br><span class="line">    <span class="string">'$or'</span>:[</span><br><span class="line">        &#123;key3: value3&#125;,</span><br><span class="line">        &#123;key4: value4&#125;,</span><br><span class="line">        &#123;key5: &#123;<span class="string">'$ne'</span>: value5&#125;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-    </div>
+</div>
 
     <section class="post-tags">
       <div>
