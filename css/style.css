@@ -146,11 +146,11 @@ template {
   font-family: 'lanting';
   src: url("../fonts/lanting/lanting.eot"); /* IE9 */
   src: url("../fonts/lanting/lanting.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */ url("../fonts/lanting/lanting.woff2") format('woff2'), url("../fonts/lanting/lanting.woff") format('woff'), url("../fonts/lanting/lanting.ttf") format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  font-weight: 300;
+  font-weight: 400;
   font-display: swap;
 }
 html {
-  font-family: 'Microsoft Jhenghei', Lantinghei SC, 'lanting', PingFang SC, Seguo UI, Microsoft Yahei, Arial;
+  font-family: 'Roboto Condensed', 'Microsoft Jhenghei', Lantinghei SC, 'lanting', PingFang SC, Seguo UI, Microsoft Yahei, Arial;
 }
 html::-webkit-scrollbar {
   width: 8px;
@@ -165,9 +165,11 @@ html::-webkit-scrollbar-thumb:hover {
   background-color: #ddd;
 }
 body {
-  font-size: 11pt;
-  font-weight: normal;
-  line-height: 2em;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.025em;
+  line-height: 1.6;
   background-color: #fff;
   color: #161209;
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
@@ -613,6 +615,7 @@ header label {
 }
 .post-wrap .archive-item {
   margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 .archive-item-link {
   display: inline-block;
@@ -953,7 +956,7 @@ header label {
   line-height: 1.7em;
   padding: 7px;
   font-size: 13px;
-  font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: 'Roboto Condensed', Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .post-content code {
   line-height: 1.7em;
@@ -1090,8 +1093,9 @@ header label {
   position: inherit;
   overflow: hidden;
 }
-.post-toc .tocbot-list ul li {
+.post-toc .tocbot-list li {
   margin-left: 0.25rem;
+  padding-bottom: 0.875rem;
 }
 .post-toc .toc-link::before {
   background-color: #fff;
