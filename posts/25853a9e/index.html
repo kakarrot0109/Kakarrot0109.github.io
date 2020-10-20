@@ -200,18 +200,18 @@
 
     <div class="post-content"><h2 id="基础教程"><a href="#基础教程" class="headerlink" title="基础教程"></a>基础教程</h2><p>一个最基本的宏，释放吸血鬼之触：</p>
 <p><code>/cast 吸血鬼之触</code></p>
-<p>加上目标修饰 <a href="https://nga.178.com/nuke.php?func=ucp&__inchst=UTF-8&username=mouseover" target="_blank" rel="noopener">[@mouseover]</a> ，这个宏就变成了鼠标指向宏：</p>
+<p>加上目标修饰 <code>[@mouseover]</code>，这个宏就变成了鼠标指向宏：</p>
 <p><code>/cast [@mouseover] 吸血鬼之触</code></p>
 <blockquote>
-<p>  技能前的<code>[]</code>里一般是用来加技能修饰，一般可以加目标修饰、键位修饰、条件修饰。</p>
+<p>技能前的<code>[]</code>里一般是用来加技能修饰，一般可以加目标修饰、键位修饰、条件修饰。</p>
 </blockquote>
 <p>增加两个条件修饰，目标没有死亡<code>nodead</code>，目标是敌方单位<code>harm</code>，再增加目标修饰<code>@mouseover</code>鼠标指向：</p>
 <p><code>/cast [@mouseover,nodead,harm] 吸血鬼之触</code></p>
 <p><strong>宏命令格式：</strong></p>
 <p><code>/cast [目标1,键位1,条件1.1,条件1.2][条件2.1,条件2.2]技能</code></p>
 <blockquote>
-<p>  <code>[]</code>与<code>[]</code>之间是or的关系，只要满足其中一个<code>[]</code>修饰组，那么就对该[]修饰组内的目标单位作用生效。</p>
-<p>  <code>[]</code>内部的条件是and关系，比如上述<code>nodead</code>,<code>harm</code>，就要同时满足目标是敌方单位且未死亡。<br>  一个修饰组里，目标修饰和键位修饰最多只能设置1个，条件修饰可以设置多个。</p>
+<p><code>[]</code>与<code>[]</code>之间是 or 的关系，只要满足其中一个<code>[]</code>修饰组，那么就对该[]修饰组内的目标单位作用生效。</p>
+<p><code>[]</code>内部的条件是 and 关系，比如上述<code>nodead</code>,<code>harm</code>，就要同时满足目标是敌方单位且未死亡。<br>一个修饰组里，目标修饰和键位修饰最多只能设置 1 个，条件修饰可以设置多个。</p>
 </blockquote>
 <p>假如某技能是可以同时给敌方和友方使用，我们想给鼠标指向的敌方单位或者当前目标的友方单位使用时：</p>
 <p><code>/cast [@mouseover,harm][@target,help] 技能</code></p>
@@ -222,34 +222,35 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/cast [@mouseover] 吸血鬼之触;吸血鬼之触</span><br><span class="line">/cast [<span class="string">@mouseover</span>][<span class="symbol"></span>]吸血鬼之触</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>  第一种的好处是默认技能可以设置成其他技能。</p>
-<p>  第二种条件技能和默认技能都是一个，好处是使用空条件<code>[]</code>可以节省宏字数。</p>
+<p>第一种的好处是默认技能可以设置成其他技能。</p>
+<p>第二种条件技能和默认技能都是一个，好处是使用空条件<code>[]</code>可以节省宏字数。</p>
 </blockquote>
 <h2 id="进阶教程"><a href="#进阶教程" class="headerlink" title="进阶教程"></a>进阶教程</h2><h3 id="键位修饰宏"><a href="#键位修饰宏" class="headerlink" title="键位修饰宏"></a>键位修饰宏</h3><p><code>/cast [@mouseover,mod:alt][]恢复; [mod:shift] 真言术：盾;</code></p>
 <blockquote>
-<p>  这个宏的默认技能是恢复。<br>  当按下alt键，对鼠标指向的单位使用恢复。<br>  当按下shift键，该宏的作用是使用盾技能。由于盾这个条件没有加释放的目标(@target @mouseover等)，使用shift切换成盾时，需要你制定目标。<br>  一般是对当前目标释放，没有当前目标则对自己释放，和单个技能盾是一样的。</p>
+<p>这个宏的默认技能是恢复。<br>当按下 alt 键，对鼠标指向的单位使用恢复。<br>当按下 shift 键，该宏的作用是使用盾技能。</p>
+<p>由于盾这个条件没有加释放的目标(<code>@target @mouseover</code> 等)，使用 shift 切换成盾时，需要你指定目标。<br>一般是对当前目标释放，没有当前目标则对自己释放，和单个技能盾是一样的。</p>
 </blockquote>
 <h3 id="敌友目标切换宏"><a href="#敌友目标切换宏" class="headerlink" title="敌友目标切换宏"></a>敌友目标切换宏</h3><p><code>/cast [@target,harm] 惩击;恢复</code></p>
 <blockquote>
-<p>  这个宏的默认技能是恢复。<br>  当前目标为敌方单位时，切换为惩击。</p>
+<p>这个宏的默认技能是恢复。<br>当前目标为敌方单位时，切换为惩击。</p>
 </blockquote>
 <h3 id="状态切换宏"><a href="#状态切换宏" class="headerlink" title="状态切换宏"></a>状态切换宏</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#showtooltip</span></span><br><span class="line">/cast [talent:3/3,channeling:精神灼烧] 灼烧梦魇; 精神灼烧</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>  这个宏的默认条件是精神灼烧。<br>  在天赋选择灼烧梦魇且在引导精神灼烧的条件下，切换为灼烧梦魇。</p>
+<p>这个宏的默认条件是精神灼烧。<br>在天赋选择灼烧梦魇且在引导精神灼烧的条件下，切换为灼烧梦魇。</p>
 </blockquote>
 <h3 id="字段列表"><a href="#字段列表" class="headerlink" title="字段列表"></a>字段列表</h3><p><strong>目标列表</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@player 玩家自身(这个宏常出现在羽毛宏里，直接往自己脚底下丢羽毛)</span><br><span class="line">@target 当前目标</span><br><span class="line">@mouseover 鼠标指向目标</span><br><span class="line">@cursor 鼠标指向目标区域，这个只能对目标区域技能生效，比如大驱，罩子，dk的死亡凋零</span><br><span class="line">@focus 焦点目标</span><br><span class="line">@targettarget 目标的目标(7.0大家常用的对t打惩击，就是使用目标的目标)</span><br><span class="line">@pet 玩家的宝宝，牧师不常用</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@player 玩家自身(这个宏常出现在羽毛宏里，直接往自己脚底下丢羽毛)</span><br><span class="line">@target 当前目标</span><br><span class="line">@mouseover 鼠标指向目标</span><br><span class="line">@cursor 鼠标指向目标区域，这个只能对目标区域技能生效，比如大驱，罩子，dk 的死亡凋零</span><br><span class="line">@focus 焦点目标</span><br><span class="line">@targettarget 目标的目标(7.0 大家常用的对 t 打惩击，就是使用目标的目标)</span><br><span class="line">@pet 玩家的宝宝，牧师不常用</span><br></pre></td></tr></table></figure>
 
 <p><strong>条件列表</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">combat 在战斗状态下</span><br><span class="line">harm 目标是敌方单位</span><br><span class="line">help 目标是友方单位</span><br><span class="line">dead 目标已经死亡</span><br><span class="line">exists 目标存在(一般配合@mouseover)</span><br><span class="line">channeling 当前是否在引导技能</span><br><span class="line">talent:1/3 是否点了某天赋，1是第一排，3是第三列，根据实际进行修改</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">combat 在战斗状态下</span><br><span class="line">harm 目标是敌方单位</span><br><span class="line">help 目标是友方单位</span><br><span class="line">dead 目标已经死亡</span><br><span class="line">exists 目标存在(一般配合@mouseover)</span><br><span class="line">channeling 当前是否在引导技能</span><br><span class="line">talent:1/3 是否点了某天赋，1 是第一排，3 是第三列，根据实际进行修改</span><br></pre></td></tr></table></figure>
 
 <p><strong>键位修饰列表</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mod:shift 按下shift键时生效</span><br><span class="line">mod:alt 按下alt键时生效</span><br><span class="line">mod:ctrl 按下ctrl键时生效</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mod:shift 按下 shift 键时生效</span><br><span class="line">mod:alt 按下 alt 键时生效</span><br><span class="line">mod:ctrl 按下 ctrl 键时生效</span><br></pre></td></tr></table></figure>
 
 <p>大家经常会在宏里看到<code>#showtooltip</code>, 这个语句的作用是帮你自动切换技能图标和技能说明。</p>
 <p>比如上述的敌友目标切换宏里，你加了<code>#showtooltip</code>以后，宏的图标和技能说明就能根据实际情况进行切换，非常的方便。</p>
-<p>因此自己写组合宏的时候，一定不要自己设置宏图标，直接#showtooltip就好了。</p>
+<p>因此自己写组合宏的时候，一定不要自己设置宏图标，直接<code>#showtooltip</code>就好了。</p>
 </div>
 
     <section class="post-tags">
