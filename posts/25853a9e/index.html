@@ -218,8 +218,8 @@
 <p>如果鼠标指向了友方单位或者当前目标是敌方单位，那么都不符合上述描述的条件，则宏无效。<br>假如同时符合上述两个条件(鼠标指向了敌方，当前目标又是友方)，那么根据短路原则匹配最左边<code>[]</code>条件内的目标。</p>
 <p>一个技能加上修饰以后，那就意味着该宏只有在满足条件时，才能使用。</p>
 <p><code>/cast [@mouseover] 吸血鬼之触</code></p>
-<p>比如上边的宏只有在鼠标指向单位以后才能使用。我们设定一个目标，鼠标放着悬空时，这个宏就用不了了，显然这种情况下体验是很差的。所以我们需要添加一个默认技能，当满足条件时使用条件技能，不满足条件时，使用默认技能。<br>解决的思路有两种：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/cast [@mouseover] 吸血鬼之触;吸血鬼之触</span><br><span class="line">/cast [<span class="string">@mouseover</span>][<span class="symbol"></span>]吸血鬼之触</span><br></pre></td></tr></table></figure>
+<p>比如上边的宏只有在鼠标指向单位以后才能使用。我们设定一个目标，鼠标放着悬空时，这个宏就用不了了，显然这种情况下体验是很差的。所以我们需要添加一个默认技能，当满足条件时使用条件技能，不满足条件时，使用默认技能。<br>解决的思路有两种：luq</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/cast [@mouseover] 吸血鬼之触;吸血鬼之触</span><br><span class="line">/cast [@mouseover][]吸血鬼之触</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>第一种的好处是默认技能可以设置成其他技能。</p>
@@ -234,19 +234,19 @@
 <blockquote>
 <p>这个宏的默认技能是恢复。<br>当前目标为敌方单位时，切换为惩击。</p>
 </blockquote>
-<h3 id="状态切换宏"><a href="#状态切换宏" class="headerlink" title="状态切换宏"></a>状态切换宏</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#showtooltip</span></span><br><span class="line">/cast [talent:3/3,channeling:精神灼烧] 灼烧梦魇; 精神灼烧</span><br></pre></td></tr></table></figure>
+<h3 id="状态切换宏"><a href="#状态切换宏" class="headerlink" title="状态切换宏"></a>状态切换宏</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">/cast [talent:<span class="number">3</span>/<span class="number">3</span>,channeling:精神灼烧] 灼烧梦魇; 精神灼烧</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>这个宏的默认条件是精神灼烧。<br>在天赋选择灼烧梦魇且在引导精神灼烧的条件下，切换为灼烧梦魇。</p>
 </blockquote>
 <h3 id="字段列表"><a href="#字段列表" class="headerlink" title="字段列表"></a>字段列表</h3><p><strong>目标列表</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@player 玩家自身(这个宏常出现在羽毛宏里，直接往自己脚底下丢羽毛)</span><br><span class="line">@target 当前目标</span><br><span class="line">@mouseover 鼠标指向目标</span><br><span class="line">@cursor 鼠标指向目标区域，这个只能对目标区域技能生效，比如大驱，罩子，dk 的死亡凋零</span><br><span class="line">@focus 焦点目标</span><br><span class="line">@targettarget 目标的目标(7.0 大家常用的对 t 打惩击，就是使用目标的目标)</span><br><span class="line">@pet 玩家的宝宝，牧师不常用</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@player <span class="comment">--玩家自身(这个宏常出现在羽毛宏里，直接往自己脚底下丢羽毛)</span></span><br><span class="line">@target <span class="comment">--当前目标</span></span><br><span class="line">@mouseover <span class="comment">--鼠标指向目标</span></span><br><span class="line">@cursor <span class="comment">--鼠标指向目标区域，这个只能对目标区域技能生效，比如大驱，罩子，dk 的死亡凋零</span></span><br><span class="line">@focus <span class="comment">--焦点目标</span></span><br><span class="line">@targettarget <span class="comment">--目标的目标(7.0 大家常用的对 t 打惩击，就是使用目标的目标)</span></span><br><span class="line">@pet <span class="comment">--玩家的宝宝，牧师不常用</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>条件列表</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">combat 在战斗状态下</span><br><span class="line">harm 目标是敌方单位</span><br><span class="line">help 目标是友方单位</span><br><span class="line">dead 目标已经死亡</span><br><span class="line">exists 目标存在(一般配合@mouseover)</span><br><span class="line">channeling 当前是否在引导技能</span><br><span class="line">talent:1/3 是否点了某天赋，1 是第一排，3 是第三列，根据实际进行修改</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">combat <span class="comment">--在战斗状态下</span></span><br><span class="line">harm <span class="comment">--目标是敌方单位</span></span><br><span class="line">help <span class="comment">--目标是友方单位</span></span><br><span class="line">dead <span class="comment">--目标已经死亡</span></span><br><span class="line">exists <span class="comment">--目标存在(一般配合@mouseover)</span></span><br><span class="line">channeling <span class="comment">--当前是否在引导技能</span></span><br><span class="line">talent:<span class="number">1</span>/<span class="number">3</span> <span class="comment">--是否点了某天赋，1 是第一排，3 是第三列，根据实际进行修改</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>键位修饰列表</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mod:shift 按下 shift 键时生效</span><br><span class="line">mod:alt 按下 alt 键时生效</span><br><span class="line">mod:ctrl 按下 ctrl 键时生效</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mod</span>:shift <span class="comment">--按下 shift 键时生效</span></span><br><span class="line"><span class="built_in">mod</span>:alt <span class="comment">--按下 alt 键时生效</span></span><br><span class="line"><span class="built_in">mod</span>:ctrl <span class="comment">--按下 ctrl 键时生效</span></span><br></pre></td></tr></table></figure>
 
 <p>大家经常会在宏里看到<code>#showtooltip</code>, 这个语句的作用是帮你自动切换技能图标和技能说明。</p>
 <p>比如上述的敌友目标切换宏里，你加了<code>#showtooltip</code>以后，宏的图标和技能说明就能根据实际情况进行切换，非常的方便。</p>
