@@ -16,7 +16,7 @@ hr {
   overflow: visible /* 2 */;
 }
 pre {
-  font-family: monospace, monospace /* 1 */;
+  font-family: 'Microsoft Jhenghei' /* 1 */;
   font-size: 1em /* 2 */;
 }
 a {
@@ -34,7 +34,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace /* 1 */;
+  font-family: 'Microsoft Jhenghei' /* 1 */;
   font-size: 1em /* 2 */;
 }
 small {
@@ -61,7 +61,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit /* 1 */;
+  font-family: 'Microsoft Jhenghei' /* 1 */;
   font-size: 100% /* 1 */;
   line-height: 1.15 /* 1 */;
   margin: 0 /* 2 */;
@@ -795,7 +795,7 @@ header label {
 .post-content pre {
   padding: 7px;
   font-size: 13px;
-  font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: 'Microsoft Jhenghei';
 }
 .post-content code {
   padding: 3px 5px;
@@ -953,7 +953,7 @@ header label {
   line-height: 1.7em;
   padding: 7px;
   font-size: 13px;
-  font-family: 'Roboto Condensed', Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: 'Microsoft Jhenghei';
 }
 .post-content code {
   line-height: 1.7em;
