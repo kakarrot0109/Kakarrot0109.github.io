@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="KAKARROT">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="我只想事情是它本来该有的那个样子！">
+
+
+    <meta name="keywords" content="产品,哲学,历史,魔兽,音乐">
+
+
+<title>魔兽世界正式服Lua集合 | KAKARROT&#39;S BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">KAKARROT&#39;S BLOG</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/books">书籍</a>
+                
+                    <a class="menu-item" href="/movies">电影</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">KAKARROT&#39;S BLOG</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/books">书籍</a>
+                
+                    <a class="menu-item" href="/movies">电影</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+  <article class="post-wrap">
+    <header class="post-header">
+      <h1 class="post-title">魔兽世界正式服Lua集合</h1>
+      
+      <div class="post-meta">
+         作者:&nbsp;
+        <a itemprop="author" rel="author" href="/">KAKARROT</a>
+         
+        <span class="post-time">
+          &nbsp;&nbsp;&nbsp;日期:&nbsp;
+          <a href="#"
+            >十月 29, 2020
+            <!-- &nbsp;&nbsp;0:00:00 -->
+          </a>
+        </span>
+         
+        <span class="post-category">
+          &nbsp;&nbsp;&nbsp;分类: &nbsp;
+          <a href="/categories/World-of-Warcraft/">World of Warcraft</a>
+          
+        </span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-content"><figure class="highlight lua"><figcaption><span>Core.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  缩写重置命令</span></span><br><span class="line">SlashCmdList[<span class="string">'RELOAD'</span>] = <span class="function"><span class="keyword">function</span><span class="params">()</span></span> ReloadUI() <span class="keyword">end</span></span><br><span class="line">SLASH_RELOAD1 = <span class="string">'/rl'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--  摧毁物品时自动填写“DELETE”</span></span><br><span class="line">hooksecurefunc(StaticPopupDialogs[<span class="string">"DELETE_GOOD_ITEM"</span>], <span class="string">"OnShow"</span>, <span class="function"><span class="keyword">function</span><span class="params">(self)</span></span></span><br><span class="line">    self.editBox:SetText(DELETE_ITEM_CONFIRM_STRING)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 法术书滚轮翻页</span></span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">SpellBookFrame_OnMouseWheel</span><span class="params">(self, value, scrollBar)</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">local</span> currentPage, maxPages = SpellBook_GetCurrentPage();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (value &gt; <span class="number">0</span>) <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">if</span> (currentPage &gt; <span class="number">1</span>) <span class="keyword">then</span> SpellBookPrevPageButton_OnClick() <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> (currentPage &lt; maxPages) <span class="keyword">then</span></span><br><span class="line">            SpellBookNextPageButton_OnClick()</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">SpellBookFrame:SetScript(<span class="string">"OnMouseWheel"</span>, SpellBookFrame_OnMouseWheel)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 头像固定位置</span></span><br><span class="line"><span class="keyword">local</span> pFrameX = <span class="number">-500</span> <span class="comment">-- 玩家头像的X坐标</span></span><br><span class="line"><span class="keyword">local</span> pFrameY = <span class="number">350</span> <span class="comment">-- 玩家头像的Y坐标</span></span><br><span class="line"><span class="keyword">local</span> tFrameX = <span class="number">-270</span> <span class="comment">-- 目标头像的X坐标</span></span><br><span class="line"><span class="keyword">local</span> tFrameY = <span class="number">350</span> <span class="comment">-- 目标头像的Y坐标</span></span><br><span class="line"><span class="keyword">local</span> frameScale = <span class="number">1.2</span> <span class="comment">-- 玩家/目标/队友头像的缩放比例</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">newPosition</span><span class="params">()</span></span></span><br><span class="line">    PlayerFrame:ClearAllPoints()</span><br><span class="line">    PlayerFrame:SetPoint(<span class="string">"CENTER"</span>, pFrameX, pFrameY)</span><br><span class="line">    PlayerFrame:SetUserPlaced(<span class="literal">true</span>)</span><br><span class="line">    PlayerFrame:SetScale(frameScale)</span><br><span class="line"></span><br><span class="line">    TargetFrame:ClearAllPoints()</span><br><span class="line">    TargetFrame:SetPoint(<span class="string">"CENTER"</span>, tFrameX, tFrameY)</span><br><span class="line">    TargetFrame:SetUserPlaced(<span class="literal">true</span>)</span><br><span class="line">    TargetFrame:SetScale(frameScale)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> iLayout = CreateFrame(<span class="string">"Frame"</span>)</span><br><span class="line">iLayout:RegisterEvent(<span class="string">"PLAYER_ENTERING_WORLD"</span>)</span><br><span class="line"></span><br><span class="line">iLayout:SetScript(<span class="string">"OnEvent"</span>, <span class="function"><span class="keyword">function</span><span class="params">(self, event, ...)</span></span></span><br><span class="line">    <span class="keyword">if</span> event == <span class="string">"PLAYER_ENTERING_WORLD"</span> <span class="keyword">and</span> <span class="keyword">not</span> InCombatLockdown() <span class="keyword">then</span></span><br><span class="line">        newPosition()</span><br><span class="line">        self:UnregisterEvent(<span class="string">"PLAYER_ENTERING_WORLD"</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line">CastingBarFrame:ClearAllPoints()</span><br><span class="line">CastingBarFrame:SetPoint(<span class="string">"CENTER"</span>, UIParent, <span class="string">"CENTER"</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--动作条按键优化</span></span><br><span class="line"><span class="keyword">local</span> <span class="built_in">gsub</span> = <span class="built_in">string</span>.<span class="built_in">gsub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">HotkeyReplace</span><span class="params">(button)</span></span></span><br><span class="line">    <span class="keyword">local</span> text = button.HotKey <span class="keyword">and</span> button.HotKey:GetText()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> text <span class="keyword">then</span> <span class="keyword">return</span> <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    text = <span class="built_in">gsub</span>(text, <span class="string">'(s%-)'</span>, <span class="string">'S-'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, <span class="string">'(a%-)'</span>, <span class="string">'A-'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, <span class="string">'(c%-)'</span>, <span class="string">'C-'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, <span class="string">'(st%-)'</span>, <span class="string">'C-'</span>) <span class="comment">-- german control 'Steuerung'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">30</span> <span class="keyword">do</span></span><br><span class="line">        text = <span class="built_in">gsub</span>(text, <span class="built_in">_G</span>[<span class="string">'KEY_BUTTON'</span>..i], <span class="string">'M'</span>..i)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">9</span> <span class="keyword">do</span></span><br><span class="line">        text = <span class="built_in">gsub</span>(text, <span class="built_in">_G</span>[<span class="string">'KEY_NUMPAD'</span>..i], <span class="string">'N'</span>..i)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    text = <span class="built_in">gsub</span>(text, CAPSLOCK_KEY_TEXT, <span class="string">'CK'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_NUMPADMULTIPLY, <span class="string">'*'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_NUMPADDIVIDE, <span class="string">'/'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_NUMPADPLUS, <span class="string">'+'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_NUMPADMINUS, <span class="string">'-'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_MOUSEWHEELUP, <span class="string">'MU'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_MOUSEWHEELDOWN, <span class="string">'MD'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_NUMLOCK, <span class="string">'NuL'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_PAGEUP, <span class="string">'PU'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_PAGEDOWN, <span class="string">'PD'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_SPACE, <span class="string">'_'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_INSERT, <span class="string">'Ins'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_HOME, <span class="string">'Hm'</span>)</span><br><span class="line">    text = <span class="built_in">gsub</span>(text, KEY_DELETE, <span class="string">'Del'</span>)</span><br><span class="line"></span><br><span class="line">    button.HotKey:SetText(text)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> lgr, lgg, lgb = LIGHTGRAY_FONT_COLOR:GetRGB()</span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">SetButtonFont</span><span class="params">(button)</span></span></span><br><span class="line">    <span class="keyword">if</span> button.HotKey <span class="keyword">then</span></span><br><span class="line">        button.HotKey:SetFont(button.HotKey:GetFont(), <span class="number">12</span>, <span class="string">'OUTLINE'</span>)</span><br><span class="line">        <span class="comment">-- update hotkey color</span></span><br><span class="line">        hooksecurefunc(button.HotKey, <span class="string">'SetVertexColor'</span>, <span class="function"><span class="keyword">function</span><span class="params">(self, r, g, b)</span></span></span><br><span class="line">            <span class="keyword">if</span> r == lgr <span class="keyword">and</span> g == lgg <span class="keyword">and</span> b == lgb <span class="keyword">then</span></span><br><span class="line">                self:SetVertexColor(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">if</span> button.Name <span class="keyword">then</span></span><br><span class="line">        button.Name:SetFont(button.Name:GetFont(), <span class="number">12</span>, <span class="string">'OUTLINE'</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> frame = CreateFrame(<span class="string">'Frame'</span>)</span><br><span class="line">frame:RegisterEvent(<span class="string">'PLAYER_LOGIN'</span>)</span><br><span class="line">frame:SetScript(<span class="string">'OnEvent'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">    frame:UnregisterEvent(<span class="string">'PLAYER_LOGIN'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- process old buttons</span></span><br><span class="line">    <span class="comment">-- action bar</span></span><br><span class="line">    <span class="keyword">for</span> _, button <span class="keyword">in</span> <span class="built_in">ipairs</span>(ActionBarButtonEventsFrame.frames) <span class="keyword">do</span></span><br><span class="line">        SetButtonFont(button)</span><br><span class="line">        HotkeyReplace(button)</span><br><span class="line">        hooksecurefunc(button, <span class="string">'UpdateHotkeys'</span>, HotkeyReplace)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="comment">-- pet action bar</span></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">10</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> button = <span class="built_in">_G</span>[<span class="string">'PetActionButton'</span> .. i]</span><br><span class="line">        SetButtonFont(button)</span><br><span class="line">        button.HotKey:SetPoint(<span class="string">'TOPRIGHT'</span>, <span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line">        HotkeyReplace(button)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">-- action bar</span></span><br><span class="line">    hooksecurefunc(ActionBarButtonEventsFrame, <span class="string">'RegisterFrame'</span>, <span class="function"><span class="keyword">function</span><span class="params">(_, button)</span></span></span><br><span class="line">        SetButtonFont(button)</span><br><span class="line">        hooksecurefunc(button, <span class="string">'UpdateHotkeys'</span>, HotkeyReplace)</span><br><span class="line">    <span class="keyword">end</span>)</span><br><span class="line">    <span class="comment">-- pet action bar</span></span><br><span class="line">    hooksecurefunc(<span class="string">'PetActionButton_SetHotkeys'</span>, HotkeyReplace)</span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight md"><figcaption><span>KarUI.toc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## Interface: 90001</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Title: 怀旧小工具</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Author: KAKARROT</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Notes: 自定义 lua 代码</span></span><br><span class="line"></span><br><span class="line">Core.lua</span><br></pre></td></tr></table></figure>
+</div>
+
+    <section class="post-tags">
+      <div>
+        <span>标签:</span>
+        <span class="tag">
+           
+          <a href="/tags/World-of-Warcraft/"
+            >&nbsp; # &nbsp;World of Warcraft</a
+          >
+          
+          <a href="/tags/LUA/"
+            >&nbsp; # &nbsp;LUA</a
+          >
+           
+        </span>
+      </div>
+    </section>
+    <section class="post-nav">
+       
+      <a class="next" rel="next" href="/posts/33b812a2/"
+        >关闭APP个性化推荐隐私</a
+      >
+      
+    </section>
+  </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© KAKARROT | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
