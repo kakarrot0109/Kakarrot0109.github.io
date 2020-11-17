@@ -218,7 +218,7 @@
 <p>如果鼠标指向了友方单位或者当前目标是敌方单位，那么都不符合上述描述的条件，则宏无效。<br>假如同时符合上述两个条件(鼠标指向了敌方，当前目标又是友方)，那么根据短路原则匹配最左边<code>[]</code>条件内的目标。</p>
 <p>一个技能加上修饰以后，那就意味着该宏只有在满足条件时，才能使用。</p>
 <p><code>/cast [@mouseover] 吸血鬼之触</code></p>
-<p>比如上边的宏只有在鼠标指向单位以后才能使用。我们设定一个目标，鼠标放着悬空时，这个宏就用不了了，显然这种情况下体验是很差的。所以我们需要添加一个默认技能，当满足条件时使用条件技能，不满足条件时，使用默认技能。<br>解决的思路有两种：luq</p>
+<p>比如上边的宏只有在鼠标指向单位以后才能使用。我们设定一个目标，鼠标放着悬空时，这个宏就用不了了，显然这种情况下体验是很差的。所以我们需要添加一个默认技能，当满足条件时使用条件技能，不满足条件时，使用默认技能。<br>解决的思路有两种：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/cast [@mouseover] 吸血鬼之触;吸血鬼之触</span><br><span class="line">/cast [@mouseover][]吸血鬼之触</span><br></pre></td></tr></table></figure>
 
 <blockquote>
