@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="KAKARROT">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="我只想事情是它本来该有的那个样子！">
+
+
+    <meta name="keywords" content="产品,哲学,历史,魔兽,音乐">
+
+
+<title>解决Github图片加载失败的问题 | KAKARROT&#39;S BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">KAKARROT&#39;S BLOG</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/books">书籍</a>
+                
+                    <a class="menu-item" href="/movies">电影</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">KAKARROT&#39;S BLOG</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/books">书籍</a>
+                
+                    <a class="menu-item" href="/movies">电影</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+  <article class="post-wrap">
+    <header class="post-header">
+      <h1 class="post-title">解决Github图片加载失败的问题</h1>
+      
+      <div class="post-meta">
+         作者:&nbsp;
+        <a itemprop="author" rel="author" href="/">KAKARROT</a>
+         
+        <span class="post-time">
+          &nbsp;&nbsp;&nbsp;日期:&nbsp;
+          <a href="#"
+            >十一月 24, 2020
+            <!-- &nbsp;&nbsp;0:00:00 -->
+          </a>
+        </span>
+         
+        <span class="post-category">
+          &nbsp;&nbsp;&nbsp;分类: &nbsp;
+          <a href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a>
+          
+        </span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-content"><ol>
+<li>按<code>F12</code>找到图片的域名</li>
+<li>获取到域名的<code>IP</code>地址</li>
+<li>到上述网址以后打开<a href="https://www.ipaddress.com/" target="_blank" rel="noopener">IPAddress.com</a>这个网站，在搜索框输入它的域名。</li>
+<li>打开：<code>C:\Windows\System32\drivers\etc\hosts</code></li>
+</ol>
+<p>在文件末尾添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">199.232.68.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># GitHub Start</span><br><span class="line">74.86.12.172       github.global.ssl.fastly.net</span><br><span class="line">185.199.111.153    assets-cdn.github.com</span><br><span class="line">185.199.110.153    documentcloud.github.com</span><br><span class="line">8.7.198.45         gist.github.com</span><br><span class="line">151.101.108.133    gist.githubusercontent.com</span><br><span class="line">185.199.109.154    github.githubassets.com</span><br><span class="line">185.199.111.154    help.github.com</span><br><span class="line">54.251.140.56      nodeload.github.com</span><br><span class="line">151.101.108.133    raw.github.com</span><br><span class="line">52.205.36.92       status.github.com</span><br><span class="line">140.82.114.17      training.github.com</span><br><span class="line">151.101.108.133    avatars0.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars2.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars3.githubusercontent.com</span><br><span class="line">151.101.228.133    avatars4.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars5.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars6.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars7.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars8.githubusercontent.com</span><br><span class="line">13.250.162.133     codeload.github.com</span><br><span class="line">151.101.228.133    camo.githubusercontent.com</span><br><span class="line">151.101.228.133    cloud.githubusercontent.com</span><br><span class="line">151.101.228.133    user-images.githubusercontent.com</span><br><span class="line">185.199.108.153    customer-stories-feed.github.com</span><br><span class="line">185.199.109.153    pages.github.com</span><br><span class="line">13.250.94.254      api.github.com</span><br><span class="line">140.82.113.26      live.github.com</span><br><span class="line">52.74.223.119      github.com</span><br><span class="line">199.232.68.133     raw.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure></div>
+
+    <section class="post-tags">
+      <div>
+        <span>标签:</span>
+        <span class="tag">
+           
+          <a href="/tags/Github/"
+            >&nbsp; # &nbsp;Github</a
+          >
+           
+        </span>
+      </div>
+    </section>
+    <section class="post-nav">
+       
+      <a class="next" rel="next" href="/posts/e74f7aaf/"
+        >关于盗墓</a
+      >
+      
+    </section>
+  </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© KAKARROT | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
