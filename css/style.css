@@ -143,13 +143,13 @@ template {
   display: none;
 }
 @font-face {
-  font-family: 'Microsoft Jhenghei';
-  src: url("../fonts/Microsoft Jhenghei.ttf") format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  font-family: 'Roboto Condensed';
+  src: url("../fonts/Roboto/Roboto.ttf") format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   font-weight: 400;
   font-display: swap;
 }
 html {
-  font-family: 'Microsoft Jhenghei';
+  font-family: 'Roboto Condensed', Microsoft Yahei, Arial;
 }
 html::-webkit-scrollbar {
   width: 8px;
