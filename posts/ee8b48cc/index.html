@@ -111,7 +111,67 @@
 </script>
         <div class="main">
             <div class="container">
-    
+    <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">展开全部</a>
+        <a onclick="go_top()">返回顶部</a>
+        <a onclick="go_bottom()">滚动底部</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "收起全部"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "展开全部"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>  
   <article class="post-wrap">
     <header class="post-header">
       <h1 class="post-title">魔兽世界宏命令集合</h1>
@@ -138,7 +198,72 @@
       
     </header>
 
-    <div class="post-content"></div>
+    <div class="post-content"><h1 id="牧师宏"><a href="#牧师宏" class="headerlink" title="牧师宏"></a>牧师宏</h1><h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><p><strong>羽毛宏</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 天堂之羽</span><br><span class="line">&#x2F;cast [@player,nomod] 天堂之羽; [@cursor,mod:alt] 天堂之羽;</span><br></pre></td></tr></table></figure>
+
+<p><strong>群体驱散</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 群体驱散</span><br><span class="line">&#x2F;stopcasting</span><br><span class="line">&#x2F;cast !群体驱散</span><br></pre></td></tr></table></figure>
+
+<p><strong>纯净术+驱散魔法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 纯净术</span><br><span class="line">&#x2F;stopcasting</span><br><span class="line">&#x2F;cast [help,nodead] 纯净术</span><br><span class="line">&#x2F;cast [harm,nodead] 驱散魔法</span><br></pre></td></tr></table></figure>
+
+<p><strong>同层天赋</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">&#x2F;cast [talent:6&#x2F;2] 神圣之星; [talent:6&#x2F;3] 光晕;</span><br></pre></td></tr></table></figure>
+
+<p><strong>保命</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> #showtooltip 绝望祷言</span><br><span class="line">&#x2F;cast 绝望祷言</span><br><span class="line">&#x2F;cast 部落军旗</span><br><span class="line">&#x2F;use 治疗石</span><br></pre></td></tr></table></figure>
+
+<p><strong>精神控制</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">&#x2F;cast [@mouseover,harm,nodead]精神控制;精神控制</span><br></pre></td></tr></table></figure>
+
+<p><strong>束缚亡灵</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">&#x2F;cast [@mouseover,harm,nodead]束缚亡灵;束缚亡灵</span><br></pre></td></tr></table></figure>
+
+<p><strong>竞技场姓名</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;run local U&#x3D;UnitIsUnit hooksecurefunc(&quot;CompactUnitFrame_UpdateName&quot;,function(F)if IsActiveBattlefieldArena()and F.unit:find(&quot;nameplate&quot;)then for i&#x3D;1,5 do if U(F.unit,&quot;arena&quot;..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>竞技场内敌对姓名设置为1，2，3</p>
+</blockquote>
+<p><strong>亡灵意志</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#show 亡灵意志</span><br><span class="line">&#x2F;targetlasttarget</span><br><span class="line">&#x2F;cast 亡灵意志</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>作用是在被恐惧时意志并且找回恐惧前的目标，因为被恐惧会丢失目标。</p>
+</blockquote>
+<h3 id="戒律"><a href="#戒律" class="headerlink" title="戒律"></a>戒律</h3><p><strong>暗影愈合+真言术：慰</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：慰(天赋)</span><br><span class="line">&#x2F;cast [help,nodead] 暗影愈合</span><br><span class="line">&#x2F;cast [harm,nodead] 真言术：慰(天赋)</span><br></pre></td></tr></table></figure>
+
+<p>真言术：耀+净化邪恶</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：耀</span><br><span class="line">&#x2F;cast [help,nodead] 真言术：耀</span><br><span class="line">&#x2F;cast [harm,nodead] 净化邪恶</span><br></pre></td></tr></table></figure>
+
+<p><strong>心灵震爆+惩击</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 心灵震爆</span><br><span class="line">&#x2F;castsequence [@targettarget,harm,nodead] [@focus,harm,nodead] [] reset&#x3D;0 9,惩击</span><br><span class="line">&#x2F;cast [@targettarget,harm,nodead] [@focus,harm,nodead] []心灵震爆</span><br></pre></td></tr></table></figure>
+
+<p><strong>真言术：障</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：障</span><br><span class="line">&#x2F;stopcasting</span><br><span class="line">&#x2F;cast [@cursor]真言术：障;真言术：障</span><br></pre></td></tr></table></figure>
+
+<h4 id="暗牧"><a href="#暗牧" class="headerlink" title="暗牧"></a>暗牧</h4><p><strong>消散</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 消散</span><br><span class="line">&#x2F;stopcasting</span><br><span class="line">&#x2F;cancelAura 消散</span><br><span class="line">&#x2F;cast 消散</span><br></pre></td></tr></table></figure>
+
+<p><strong>暗影愈合+吸血鬼之触</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">&#x2F;cast [help,nodead] 暗影愈合</span><br><span class="line">&#x2F;cast [harm,nodead] 吸血鬼之触</span><br></pre></td></tr></table></figure>
+
+<p><strong>心灵尖啸+心灵惊骇</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">&#x2F;cast [modifier:alt] 心灵惊骇</span><br><span class="line">&#x2F;cast 心灵尖啸</span><br></pre></td></tr></table></figure>
+
+<p><strong>沉默</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">&#x2F;stopcasting</span><br><span class="line">&#x2F;cast [@mouseover,harm] 沉默;沉默</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">&#x2F;stopcasting</span><br><span class="line">&#x2F;cast [target&#x3D;focus,exists] 沉默</span><br></pre></td></tr></table></figure>
+
+<h4 id="神牧"><a href="#神牧" class="headerlink" title="神牧"></a>神牧</h4><p><strong>愈合祷言+神圣之火</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">&#x2F;cast [help,nodead] 愈合祷言</span><br><span class="line">&#x2F;cast [harm,nodead] 神圣之火</span><br></pre></td></tr></table></figure>
+
+
+
+<p>未完待续.</p>
+</div>
 
     <section class="post-tags">
       <div>
