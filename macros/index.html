@@ -18,7 +18,7 @@
     <meta name="keywords" content="产品,哲学,历史,魔兽,音乐">
 
 
-<title>魔兽世界宏命令集合 | KAKARROT&#39;S BLOG</title>
+<title>MACROS | KAKARROT&#39;S BLOG</title>
 
 
 
@@ -58,9 +58,13 @@
             <div class="navbar-header header-logo"><a href="/">KAKARROT&#39;S BLOG</a></div>
             <div class="menu navbar-right">
                 
-                    <a class="menu-item" href="/archives">文章</a>
+                    <a class="menu-item" href="/archives">POST LIST</a>
                 
-                    <a class="menu-item" href="/about">关于</a>
+                    <a class="menu-item" href="/about">MY STORY</a>
+                
+                    <a class="menu-item" href="/macros">MACROS</a>
+                
+                    <a class="menu-item" href="/interface">INTERFACE</a>
                 
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
@@ -79,9 +83,13 @@
             </div>
             <div class="menu" id="mobile-menu">
                 
-                    <a class="menu-item" href="/archives">文章</a>
+                    <a class="menu-item" href="/archives">POST LIST</a>
                 
-                    <a class="menu-item" href="/about">关于</a>
+                    <a class="menu-item" href="/about">MY STORY</a>
+                
+                    <a class="menu-item" href="/macros">MACROS</a>
+                
+                    <a class="menu-item" href="/interface">INTERFACE</a>
                 
             </div>
         </div>
@@ -103,94 +111,12 @@
 </script>
         <div class="main">
             <div class="container">
-    <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">展开全部</a>
-        <a onclick="go_top()">返回顶部</a>
-        <a onclick="go_bottom()">滚动底部</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "收起全部"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "展开全部"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>  
-  <article class="post-wrap">
-    <header class="post-header">
-      <h1 class="post-title">魔兽世界宏命令集合</h1>
-      
-      <div class="post-meta">
-         作者:&nbsp;
-        <a itemprop="author" rel="author" href="/">KAKARROT</a>
-         
-        <span class="post-time">
-          &nbsp;&nbsp;&nbsp;日期:&nbsp;
-          <a href="#"
-            >十二月 09, 2020
-            <!-- &nbsp;&nbsp;0:00:00 -->
-          </a>
-        </span>
-         
-        <span class="post-category">
-          &nbsp;&nbsp;&nbsp;分类: &nbsp;
-          <a href="/categories/World-of-Warcraft/">World of Warcraft</a>
-          
-        </span>
+    <article class="post-wrap page">
         
-      </div>
-      
-    </header>
-
-    <div class="post-content"><h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><p><strong>羽毛宏</strong></p>
+        <h2 class="post-title">MACROS</h2>
+        
+        <section class="post-content">
+            <h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><p><strong>羽毛宏</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">&#x2F;cast [@player] 天堂之羽</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -272,32 +198,9 @@
 <blockquote>
 <p>焦点释放沉默</p>
 </blockquote>
-</div>
 
-    <section class="post-tags">
-      <div>
-        <span>标签:</span>
-        <span class="tag">
-           
-          <a href="/tags/World-of-Warcraft/"
-            >&nbsp; # &nbsp;World of Warcraft</a
-          >
-           
-        </span>
-      </div>
-    </section>
-    <section class="post-nav">
-      
-      <a class="prev" rel="prev" href="/posts/c7b56c04/"
-        >魔兽世界插件包</a
-      >
-       
-      <a class="next" rel="next" href="/posts/7908bde0/"
-        >霞浦攻略</a
-      >
-      
-    </section>
-  </article>
+        </section>
+    </article>
 </div>
 
         </div>
