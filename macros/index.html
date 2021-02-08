@@ -118,100 +118,24 @@
         <section class="post-content">
             <p>Kakarrot’s Priest Macros</p>
 <hr>
-<p><strong>羽毛宏</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">/cast [@player] 天堂之羽</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/cast [@player] 天堂之羽</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>自身脚下释放羽毛</p>
-</blockquote>
-<p><strong>群体驱散</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 群体驱散</span><br><span class="line">/stopcasting</span><br><span class="line">/cast !群体驱散</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：耀</span><br><span class="line">/cast [target=mouseover,help,nodead] 真言术：耀;[@mouseover,harm,exists]暗言术：痛;[harm]暗言术：痛;[help] [@player] 真言术：耀</span><br></pre></td></tr></table></figure>
 
-<p><strong>纯净术+驱散魔法</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">/cast [harm]驱散魔法;纯净术</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 驱散魔法</span><br><span class="line">/cast [target=mouseover,help,nodead] 纯净术;[@mouseover,harm,exists]驱散魔法;[harm]驱散魔法;[help] [@player] 纯净术</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>敌方驱散魔法，友方纯净术</p>
-</blockquote>
-<p><strong>同层天赋</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">/cast [talent:<span class="number">6</span>/<span class="number">2</span>] 神圣之星; [talent:<span class="number">6</span>/<span class="number">3</span>] 光晕;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：慰</span><br><span class="line">/cast [target=mouseover,help,nodead] 暗影愈合;[@mouseover,harm,exists]真言术：慰;[harm]真言术：慰;[help] [@player] 暗影愈合</span><br></pre></td></tr></table></figure>
 
-<p><strong>保命</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 绝望祷言</span><br><span class="line">/cast 绝望祷言</span><br><span class="line">/cast 部落军旗</span><br><span class="line">/use 治疗石</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 惩击</span><br><span class="line">/cast [target=mouseover,harm,nodead][target=mouseovertarget,harm,nodead][harm,nodead][target=targettarget,harm,nodead] 惩击</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>绝望祷言、部落军旗、治疗石一键宏</p>
-</blockquote>
-<p><strong>精神控制</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">/cast [@mouseover,harm,nodead]精神控制;精神控制</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 沉默 </span><br><span class="line">/stopcasting </span><br><span class="line">/cast [target=focus,exists] 沉默</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>鼠标指向释放精神控制</p>
-</blockquote>
-<p><strong>束缚亡灵</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">/cast [@mouseover,harm,nodead]束缚亡灵;束缚亡灵</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 暗言术：灭 </span><br><span class="line">/stopcasting </span><br><span class="line">/cast [target=focus,exists] 暗言术：灭</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>鼠标指向释放束缚亡灵</p>
-</blockquote>
-<p><strong>竞技场姓名</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/run <span class="keyword">local</span> U=UnitIsUnit hooksecurefunc(<span class="string">"CompactUnitFrame_UpdateName"</span>,<span class="function"><span class="keyword">function</span><span class="params">(F)</span></span><span class="keyword">if</span> IsActiveBattlefieldArena()<span class="keyword">and</span> F.unit:<span class="built_in">find</span>(<span class="string">"nameplate"</span>)<span class="keyword">then</span> <span class="keyword">for</span> i=<span class="number">1</span>,<span class="number">5</span> <span class="keyword">do</span> <span class="keyword">if</span> U(F.unit,<span class="string">"arena"</span>..i)<span class="keyword">then</span> F.name:SetText(i)F.name:SetTextColor(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)<span class="keyword">break</span> <span class="keyword">end</span> <span class="keyword">end</span> <span class="keyword">end</span> <span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 思维窃取</span><br><span class="line">/stopcasting </span><br><span class="line">/cast [target=focus,exists] 思维窃取</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>竞技场内敌对姓名设置为1，2，3</p>
-</blockquote>
-<p><strong>亡灵意志</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips 被遗忘者的意志(种族特长)</span><br><span class="line">/targetlasttarget</span><br><span class="line">/cast 被遗忘者的意志(种族特长)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 绝望祷言</span><br><span class="line">&#x2F;use 战斗大师</span><br><span class="line">&#x2F;use 部落军旗</span><br><span class="line">&#x2F;use 治疗石</span><br><span class="line">&#x2F;cast 绝望祷言</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>作用是在被恐惧时意志并且找回恐惧前的目标，因为被恐惧会丢失目标</p>
-</blockquote>
-<p><strong>暗影愈合+真言术：慰</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：慰(天赋)</span><br><span class="line">/cast [harm]真言术：慰(天赋);暗影愈合</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>敌方真言术：慰(天赋)，友方暗影愈合</p>
-</blockquote>
-<p><strong>真言术：耀+净化邪恶</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：耀</span><br><span class="line">/cast [harm]净化邪恶;真言术：耀</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>敌方净化邪恶，友方真言术：耀</p>
-</blockquote>
-<p><strong>心灵震爆+惩击</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 心灵震爆</span><br><span class="line">/castsequence [@targettarget,harm] []惩击</span><br><span class="line">/cast [@targettarget,harm] []心灵震爆</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>心爆CD好了打心爆，否则一直惩击</p>
-</blockquote>
-<p><strong>真言术：障</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 真言术：障</span><br><span class="line">/stopcasting</span><br><span class="line">/cast [@cursor]真言术：障;真言术：障</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>鼠标指向直接释放罩子</p>
-</blockquote>
-<p><strong>消散</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip 消散</span><br><span class="line">/stopcasting</span><br><span class="line">/cancelAura 消散</span><br><span class="line">/cast 消散</span><br></pre></td></tr></table></figure>
-
-<p><strong>暗影愈合+吸血鬼之触</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#showtooltip</span><br><span class="line">/cast [harm]吸血鬼之触;暗影愈合</span><br></pre></td></tr></table></figure>
-
-<p><strong>心灵尖啸+心灵惊骇</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">/cast [modifier:shift] 心灵惊骇</span><br><span class="line">/cast 心灵尖啸</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>正常释放心灵尖啸，按shift释放心灵惊骇</p>
-</blockquote>
-<p><strong>沉默</strong></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">/stopcasting</span><br><span class="line">/cast [@mouseover,harm] 沉默;沉默</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>鼠标指向释放沉默</p>
-</blockquote>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#showtooltips</span><br><span class="line">/stopcasting</span><br><span class="line">/cast [target=focus,exists] 沉默</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>焦点释放沉默</p>
-</blockquote>
 
         </section>
     </article>
