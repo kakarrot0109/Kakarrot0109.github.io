@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?69f0ee345d526b1b5ecb2042b49294b3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="KAKARROT">
+
+
+    <meta name="subtitle" content="自救者、人恒久之。">
+
+
+    <meta name="description" content="我只想事情是它本来该有的那个样子！">
+
+
+    <meta name="keywords" content="产品,哲学,历史,魔兽,音乐">
+
+
+<title>Mermaid语法汇总 | KAKARROT&#39;S BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">KAKARROT&#39;S BLOG</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">POSTS</a>
+                
+                    <a class="menu-item" href="/about">ABOUT</a>
+                
+                    <a class="menu-item" href="/macros">MACROS</a>
+                
+                    <a class="menu-item" href="/addons">ADDONS</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">KAKARROT&#39;S BLOG</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">POSTS</a>
+                
+                    <a class="menu-item" href="/about">ABOUT</a>
+                
+                    <a class="menu-item" href="/macros">MACROS</a>
+                
+                    <a class="menu-item" href="/addons">ADDONS</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">展开全部</a>
+        <a onclick="go_top()">返回顶部</a>
+        <a onclick="go_bottom()">滚动底部</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "收起全部"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "展开全部"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>  
+  <article class="post-wrap">
+    <header class="post-header">
+      <h1 class="post-title">Mermaid语法汇总</h1>
+      
+      <div class="post-meta">
+         作者:&nbsp;
+        <a itemprop="author" rel="author" href="/">KAKARROT</a>
+         
+        <span class="post-time">
+          &nbsp;&nbsp;&nbsp;日期:&nbsp;
+          <a href="#"
+            >四月 27, 2021
+            <!-- &nbsp;&nbsp;0:00:00 -->
+          </a>
+        </span>
+         
+        <span class="post-category">
+          &nbsp;&nbsp;&nbsp;分类: &nbsp;
+          <a href="/categories/Markdown/">Markdown</a>
+          
+        </span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-content"><h2 id="Mermaid-介绍"><a href="#Mermaid-介绍" class="headerlink" title="Mermaid 介绍"></a>Mermaid 介绍</h2><p>它是一个基于 Javascript 的图表和图表工具，能够呈现标记启发的文本定义，以动态创建和修改图表。</p>
+<p>官方文档：<a href="https://mermaid-js.github.io/mermaid/#/README" target="_blank" rel="noopener">Mermaid文档</a></p>
+<h2 id="语法介绍"><a href="#语法介绍" class="headerlink" title="语法介绍"></a>语法介绍</h2><p>在Markdown插入Mermaid语法方式````mermaid`</p>
+<h3 id="流程图-graph"><a href="#流程图-graph" class="headerlink" title="流程图(graph)"></a>流程图(graph)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"><span class="code">    id1(["开始(可点击)"]) ---&gt; A</span></span><br><span class="line"><span class="code">    A[流程] --&gt;|链接文案| B[流程]</span></span><br><span class="line"><span class="code">    B --&gt; C&#123;判断&#125;</span></span><br><span class="line"><span class="code">    C --&gt;|Y| D[结果1]</span></span><br><span class="line"><span class="code">    D ---&gt; A</span></span><br><span class="line"><span class="code">    C --&gt;|N| E[结果2]</span></span><br><span class="line"><span class="code">    E --&gt; id2([结束])</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">    click id1 "https://kakarrot.com/" _blank</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    id1([&quot;开始(可点击)&quot;]) ---&gt; A</span><br><span class="line">    A[流程] --&gt;|链接文案| B[流程]</span><br><span class="line">    B --&gt; C&#123;判断&#125;</span><br><span class="line">    C --&gt;|Y| D[结果1]</span><br><span class="line">    D ---&gt; A</span><br><span class="line">    C --&gt;|N| E[结果2]</span><br><span class="line">    E --&gt; id2([结束])</span><br><span class="line">    </span><br><span class="line">    click id1 &quot;https:&#x2F;&#x2F;kakarrot.com&#x2F;&quot; _blank</span><br></pre></td></tr></table></figure>
+
+<h3 id="顺序图-sequenceDiagram"><a href="#顺序图-sequenceDiagram" class="headerlink" title="顺序图(sequenceDiagram)"></a>顺序图(sequenceDiagram)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">	%% 张三赋值于A 李四赋值于B</span></span><br><span class="line"><span class="code">	participant A as 张三  </span></span><br><span class="line"><span class="code">	participant B as 李四</span></span><br><span class="line"><span class="code">	%% 笔记</span></span><br><span class="line"><span class="code">	Note right of B: 这是一条笔记！</span></span><br><span class="line"><span class="code">	A --&gt;&gt; B: 你好！</span></span><br><span class="line"><span class="code">	B -&gt;&gt; A: 你好！!</span></span><br><span class="line"><span class="code">	Note over A,B: 这是一条笔记！</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">	%% 张三赋值于A 李四赋值于B</span><br><span class="line">	participant A as 张三  </span><br><span class="line">	participant B as 李四</span><br><span class="line">	%% 笔记</span><br><span class="line">	Note right of B: 这是一条笔记！</span><br><span class="line">	A --&gt;&gt; B: 你好！</span><br><span class="line">	B -&gt;&gt; A: 你好！!</span><br><span class="line">	Note over A,B: 这是一条笔记！</span><br></pre></td></tr></table></figure>
+
+<h3 id="类图-classDiagram"><a href="#类图-classDiagram" class="headerlink" title="类图(classDiagram)"></a>类图(classDiagram)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line"><span class="code">	%%创建类</span></span><br><span class="line"><span class="code">	%% 上面的是属性 下面的是方法/函数</span></span><br><span class="line"><span class="code">	class AAA&#123;</span></span><br><span class="line"><span class="code">		+AAA: AAA</span></span><br><span class="line"><span class="code">		+BBB: BBB</span></span><br><span class="line"><span class="code">		+(CCC) int</span></span><br><span class="line"><span class="code">		+DDD: (DDD)</span></span><br><span class="line"><span class="code">	&#125;</span></span><br><span class="line"><span class="code">	%%定义类</span></span><br><span class="line"><span class="code">	class Animal</span></span><br><span class="line"><span class="code">		 Vehicle &lt;|-- Car</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">	%%创建类</span><br><span class="line">	%% 上面的是属性 下面的是方法&#x2F;函数</span><br><span class="line">	class AAA&#123;</span><br><span class="line">		+AAA: AAA</span><br><span class="line">		+BBB: BBB</span><br><span class="line">		+(CCC) int</span><br><span class="line">		+DDD: (DDD)</span><br><span class="line">	&#125;</span><br><span class="line">	%%定义类</span><br><span class="line">	class Animal</span><br><span class="line">		 Vehicle &lt;|-- Car</span><br></pre></td></tr></table></figure>
+
+<h3 id="状态图-stateDiagram-v2"><a href="#状态图-stateDiagram-v2" class="headerlink" title="状态图(stateDiagram-v2)"></a>状态图(stateDiagram-v2)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram-v2</span><br><span class="line"><span class="code">    开始1 --&gt; 子流程1</span></span><br><span class="line"><span class="code">    state 子流程1&#123;</span></span><br><span class="line"><span class="code">    	开始2--&gt;AAA</span></span><br><span class="line"><span class="code">    	AAA--&gt;BBB</span></span><br><span class="line"><span class="code">    	BBB--&gt;结束2</span></span><br><span class="line"><span class="code">    	state 子流程2&#123;</span></span><br><span class="line"><span class="code">    		结束2--&gt;CCC</span></span><br><span class="line"><span class="code">    		CCC--&gt;BBB</span></span><br><span class="line"><span class="code">    		CCC--&gt;流程3</span></span><br><span class="line"><span class="code">    	&#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    子流程1--&gt;流程1</span></span><br><span class="line"><span class="code">    流程1 --&gt; 开始1</span></span><br><span class="line"><span class="code">    流程1 --&gt; 流程2: 过渡</span></span><br><span class="line"><span class="code">    流程2 --&gt; 流程1</span></span><br><span class="line"><span class="code">    流程2 --&gt; 流程3</span></span><br><span class="line"><span class="code">    流程3 --&gt; 结束1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram-v2</span><br><span class="line">    开始1 --&gt; 子流程1</span><br><span class="line">    state 子流程1&#123;</span><br><span class="line">    	开始2--&gt;AAA</span><br><span class="line">    	AAA--&gt;BBB</span><br><span class="line">    	BBB--&gt;结束2</span><br><span class="line">    	state 子流程2&#123;</span><br><span class="line">    		结束2--&gt;CCC</span><br><span class="line">    		CCC--&gt;BBB</span><br><span class="line">    		CCC--&gt;流程3</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    子流程1--&gt;流程1</span><br><span class="line">    流程1 --&gt; 开始1</span><br><span class="line">    流程1 --&gt; 流程2: 过渡</span><br><span class="line">    流程2 --&gt; 流程1</span><br><span class="line">    流程2 --&gt; 流程3</span><br><span class="line">    流程3 --&gt; 结束1</span><br></pre></td></tr></table></figure>
+
+<h3 id="实体关系图-erDiagram"><a href="#实体关系图-erDiagram" class="headerlink" title="实体关系图(erDiagram)"></a>实体关系图(erDiagram)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">erDiagram</span><br><span class="line"><span class="code">    CUSTOMER ||--o&#123; ORDER : "文案1"</span></span><br><span class="line"><span class="code">    ORDER ||--|&#123; LINE-ITEM : "文案2"</span></span><br><span class="line"><span class="code">    CUSTOMER &#125;|..|&#123; DELIVERY-ADDRESS : "文案3"</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">erDiagram</span><br><span class="line">    CUSTOMER ||--o&#123; ORDER : &quot;文案1&quot;</span><br><span class="line">    ORDER ||--|&#123; LINE-ITEM : &quot;文案2&quot;</span><br><span class="line">    CUSTOMER &#125;|..|&#123; DELIVERY-ADDRESS : &quot;文案3&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用户旅程图-journey"><a href="#用户旅程图-journey" class="headerlink" title="用户旅程图(journey)"></a>用户旅程图(journey)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">journey</span><br><span class="line"><span class="code">    title 我的工作日</span></span><br><span class="line"><span class="code">    section 上班</span></span><br><span class="line"><span class="code">      喝茶: 5: Me</span></span><br><span class="line"><span class="code">      上楼: 3: Me</span></span><br><span class="line"><span class="code">      工作: 1: Me, kakarrot</span></span><br><span class="line"><span class="code">    section 下班</span></span><br><span class="line"><span class="code">      下楼: 5: Me</span></span><br><span class="line"><span class="code">      睡觉: 5: Me</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">journey</span><br><span class="line">    title 我的工作日</span><br><span class="line">    section 上班</span><br><span class="line">      喝茶: 5: Me</span><br><span class="line">      上楼: 3: Me</span><br><span class="line">      工作: 1: Me, kakarrot</span><br><span class="line">    section 下班</span><br><span class="line">      下楼: 5: Me</span><br><span class="line">      睡觉: 5: Me</span><br></pre></td></tr></table></figure>
+
+<h3 id="甘特图-gantt"><a href="#甘特图-gantt" class="headerlink" title="甘特图(gantt)"></a>甘特图(gantt)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line"><span class="code">    dateFormat  YYYY-MM-DD</span></span><br><span class="line"><span class="code">    title       添加根特图到Mermaid</span></span><br><span class="line"><span class="code">    excludes    weekends</span></span><br><span class="line"><span class="code">    %% 排除接受YYYY-MM-DD格式的特定日期，星期几（“星期日”）或“周末”，但不接受“工作日”一词</span></span><br><span class="line"></span><br><span class="line"><span class="code">    section 开始模块</span></span><br><span class="line"><span class="code">    完成的任务               :done, des1, 2014-01-06,2014-01-08</span></span><br><span class="line"><span class="code">    活动的任务               :active, des2, 2014-01-09, 3d</span></span><br><span class="line"><span class="code">    未来的任务1             :des3, after des2, 5d</span></span><br><span class="line"><span class="code">    未来的任务2             :des4, after des3, 5d</span></span><br><span class="line"></span><br><span class="line"><span class="code">    section 关键任务模块</span></span><br><span class="line"><span class="code">    在临界线完成的任务       :crit, done, 2014-01-06,24h</span></span><br><span class="line"><span class="code">    实现解析器和json          :crit, done, after des1, 2d</span></span><br><span class="line"><span class="code">    为解析器创建测试          :crit, active, 3d</span></span><br><span class="line"><span class="code">    关键线中的未来任务       :crit, 5d</span></span><br><span class="line"><span class="code">    为渲染器创建测试          :2d</span></span><br><span class="line"><span class="code">    添加到mermaid             :1d</span></span><br><span class="line"></span><br><span class="line"><span class="code">    section 文档模块</span></span><br><span class="line"><span class="code">    描述甘特语语法                    :active, a1, after des1, 3d</span></span><br><span class="line"><span class="code">    将甘特图添加到演示页面        :after a1  , 20h</span></span><br><span class="line"><span class="code">    向演示页面添加另一个图表    :doc1, after a1  , 48h</span></span><br><span class="line"></span><br><span class="line"><span class="code">    section 结束模块</span></span><br><span class="line"><span class="code">    描述甘特语语法                   :after doc1, 3d</span></span><br><span class="line"><span class="code">    将甘特图添加到演示页面       :20h</span></span><br><span class="line"><span class="code">    向演示页面添加另一个图表    :48h</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    title       添加根特图到Mermaid</span><br><span class="line">    excludes    weekends</span><br><span class="line">    %% 排除接受YYYY-MM-DD格式的特定日期，星期几（“星期日”）或“周末”，但不接受“工作日”一词</span><br><span class="line"></span><br><span class="line">    section 开始模块</span><br><span class="line">    完成的任务               :done, des1, 2014-01-06,2014-01-08</span><br><span class="line">    活动的任务               :active, des2, 2014-01-09, 3d</span><br><span class="line">    未来的任务1             :des3, after des2, 5d</span><br><span class="line">    未来的任务2             :des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">    section 关键任务模块</span><br><span class="line">    在临界线完成的任务       :crit, done, 2014-01-06,24h</span><br><span class="line">    实现解析器和json          :crit, done, after des1, 2d</span><br><span class="line">    为解析器创建测试          :crit, active, 3d</span><br><span class="line">    关键线中的未来任务       :crit, 5d</span><br><span class="line">    为渲染器创建测试          :2d</span><br><span class="line">    添加到mermaid             :1d</span><br><span class="line"></span><br><span class="line">    section 文档模块</span><br><span class="line">    描述甘特语语法                    :active, a1, after des1, 3d</span><br><span class="line">    将甘特图添加到演示页面        :after a1  , 20h</span><br><span class="line">    向演示页面添加另一个图表    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">    section 结束模块</span><br><span class="line">    描述甘特语语法                   :after doc1, 3d</span><br><span class="line">    将甘特图添加到演示页面       :20h</span><br><span class="line">    向演示页面添加另一个图表    :48h</span><br></pre></td></tr></table></figure>
+
+<h3 id="饼图-pie"><a href="#饼图-pie" class="headerlink" title="饼图(pie)"></a>饼图(pie)</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line"><span class="code">    title Key elements in Product X</span></span><br><span class="line"><span class="code">    "Calcium" : 42.96</span></span><br><span class="line"><span class="code">    "Potassium" : 50.05</span></span><br><span class="line"><span class="code">    "Magnesium" : 10.01</span></span><br><span class="line"><span class="code">    "Iron" :  5</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Key elements in Product X</span><br><span class="line">    &quot;Calcium&quot; : 42.96</span><br><span class="line">    &quot;Potassium&quot; : 50.05</span><br><span class="line">    &quot;Magnesium&quot; : 10.01</span><br><span class="line">    &quot;Iron&quot; :  5</span><br></pre></td></tr></table></figure>
+
+</div>
+
+    <section class="post-tags">
+      <div>
+        <span>标签:</span>
+        <span class="tag">
+           
+          <a href="/tags/Markdown/"
+            >&nbsp; # &nbsp;Markdown</a
+          >
+          
+          <a href="/tags/Mermaid/"
+            >&nbsp; # &nbsp;Mermaid</a
+          >
+          
+          <a href="/tags/UML/"
+            >&nbsp; # &nbsp;UML</a
+          >
+           
+        </span>
+      </div>
+    </section>
+    <section class="post-nav">
+       
+      <a class="next" rel="next" href="/posts/d1d2222d/"
+        >产品架构那些事</a
+      >
+      
+    </section>
+  </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© KAKARROT | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
